@@ -1,7 +1,4 @@
- Troubleshooting Methods
-Skip to end of metadata
-
-    Created and last modified by Brian Adams on Feb 03, 2015
+Troubleshooting Methods
 
 Go to start of metadata
 
@@ -11,6 +8,7 @@ The book "Systems Performance: Enterprise and the Cloud" by Brendan Gregg has th
 LINKED PAGES
 
 Performance Metrics (Tools Method/Linux)
+
 TERMS
 
 Response time: the time for an operation to complete
@@ -22,6 +20,7 @@ observational analysis => obs
 hypothetical analysis => hyp
 capacity planning => cap
 experimental analysis => exp
+
 METHODS
 Streetlight anti-method 
 
