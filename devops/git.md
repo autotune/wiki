@@ -1,16 +1,10 @@
-## GIT
+== GIT ==
 
-#### Clone remote git repo
-```bash
+Clone remote git repo
 git clone $GITREPO
-```
 
-#### Commit changes
-````bash
+Commit changes
 git commit -m "Changes committed and why"
-````
 
-#### Remove files in git
-````bash
+Remove files in git
 git rm ./files*
-````
