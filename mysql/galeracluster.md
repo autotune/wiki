@@ -77,6 +77,7 @@ GRANT ALL ON *.* TO 'sst_user'@'127.0.1.1' IDENTIFIED BY 'GENERATED';
 GRANT ALL ON *.* TO 'sst_user'@'127.0.2.1' IDENTIFIED BY 'GENERATED';
 GRANT ALL ON *.* TO 'sst_user'@'127.0.3.1' IDENTIFIED BY 'GENERATED';
 FLUSH PRIVILEGES;
+```
 
 5) Modify /etc/my.cnf.d/my.cnf
 
