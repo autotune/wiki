@@ -82,7 +82,7 @@ FLUSH PRIVILEGES;
 
 ```
 [galera]
-# Mandatory settings
+\# Mandatory settings
 binlog_format=ROW
 default-storage-engine=innodb
 innodb_autoinc_lock_mode=2
