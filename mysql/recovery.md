@@ -1,4 +1,5 @@
 ### CRASHED TABLES 
+```
 mysqladmin -pr 
 mysqlcheck --repair
 REPAIR TABLES my_neat_table; 
@@ -7,3 +8,4 @@ REPAIR TABLES my_neat_table;
 +-------------------------+--------+----------+----------+
 | my__neat_table.sessions | repair | status   | OK       | 
 +-------------------------+--------+----------+----------+
+````
