@@ -1,17 +1,28 @@
 CHANGE MYSQL DATA DIR
+
 =====================
 
-getenforce: selinux.
 
-# copy over with permissions
+### SELINUX
+```
+getenforce
+```
+
+### copy over with permissions
+```
 cp -rp /var/lib/mysql /mnt/data
+```
 
-# edit with new values
+### edit with new values
+```
 datadir=/mnt/sdb6/mysql/
 socket=/mnt/sdb6/mysql.sock
+```
 
-# restart mysql
-#
+### restart mysql
+```
 /etc/init.d/mysqld restart
+```
+### without selinux: 
 
-# without selinux: done
+done
