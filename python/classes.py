@@ -1,11 +1,9 @@
 #!/usr/bin/python2.6
 
 class Taco(object):
-
-    "This object is a taco"
-
-    def __init__(self, type):
-      self.type = type
-      print self.type
+    taco = "This object is a taco"
+    def __init__(self, taco):
+      self.type = taco
+      print self.taco
 
 Taco("cheese") 

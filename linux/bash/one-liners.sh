@@ -20,4 +20,18 @@ netstat -antp | awk  '$4 ~ /:443$|:80$/ {c++;print $5 | "sed 's/::ffff://' | sed
 
 }
 
+bash_history(){
+
+getent passwd |
+cut -d : -f 6 |
+sed 's:$:/.bash_history:' |
+xargs -d '\n' grep -H -e "$pattern" 
+
 largest_dirs
+}
+
+delete_files(){
+
+find ./error_log.* -type f -print0 | xargs -0 rm -f
+
+}
