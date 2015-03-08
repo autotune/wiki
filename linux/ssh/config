@@ -1,0 +1,16 @@
+Host myhost
+    Hostname myhost
+    ProxyCommand none
+    User myuser
+    # ControlMaster auto
+    # ControlPath ~/.ssh/master-%r@%h:%p
+
+# ignore localhost and proxy to myhost
+Host * !localhost
+    ProxyCommand ssh -aY myhost 'nc -w 900 %h %p'
+    ForwardAgent yes
+    GSSAPIAuthentication no
+    VerifyHostKeyDNS no
+    HashKnownHosts no
+    TCPKeepAlive yes
+    ServerAliveInterval 300
