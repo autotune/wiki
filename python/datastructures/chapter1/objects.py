@@ -23,6 +23,7 @@ internet = "network"
 internet = connection + ' ' +  internet
 print internet 
 
+# create a music class that prints an artist
 class Music(object):
 
     asiwyfa = "This musician is And So I Watch You From Afar"
@@ -42,3 +43,16 @@ allartists = Music("allartists")
 asiwyfa = artist.asiwyfa
 
 print asiwyfa
+
+# calling methods/member functions
+
+print asiwyfa.upper()
+
+mainstream = []
+mainstream = ["Hello", False, True, 1, 1.50, int(1.50), ["World"],("foo", 1, "bar" ), "\"Hi there!\"", set('abcdefg'), {'whoop' :'whoop'}]
+
+# print out class types
+for i in mainstream:
+   print str(i) + ' ' + str(type(i)) 
+   
+
