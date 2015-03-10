@@ -19,28 +19,26 @@ print home
 # gets created first 
 connection = ""
 connection = "fiber"
-internet = "home network"
+internet = "network"
 internet = connection + ' ' +  internet
 print internet 
 
-class Taco(object):
-    taco = "This object is a taco"
-    def __init__(self, taco):
-      self.type = taco
-      print self.taco
+class Music(object):
 
-Taco("cheese")
+    asiwyfa = "This musician is And So I Watch You From Afar"
+    giao = "This musician is God Is An Astronaut"
+    def __init__(self, artist):
+      self.type = artist
+    
+    def _printall_(self, allartists):
+      self.type = allartists
+      print asiwyfa
+      print giao
 
-# update the core application only
-# class update(software):
-#     print "Software update function"
-    # instantiate object
-    # check existing packages
-    # list required packages
-    # update if desired
-    # download from main site
-    # replace specified application core
-    # leave anything like themes, modules, 
-    # custom code, etc. alone.
+artist = Music("artist")
+allartists = Music("allartists")
 
+# instantiate an object
+asiwyfa = artist.asiwyfa
 
+print asiwyfa
