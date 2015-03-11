@@ -78,8 +78,5 @@ define('DB_HOST', 'localhost');
 
 #### DATABASE 
 
-
-### GOTCHAS
-
 [1] https://wordpress.org/support/topic/warning-xmlrpc-wordpress-exploit-ddos
 [2] http://codex.wordpress.org/Changing_File_Permissions
