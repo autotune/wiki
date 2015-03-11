@@ -58,6 +58,6 @@ artist_income = total_income/total_artists
 print "There are %s rock and indie rock bands" % total_rock 
 print "There are %s more total rock and indie rock artists than ska" % more_rock
 print "It will cost %s per band to buy equipment and %s for %s bands" % (equipment_costs, total_costs, total_artists)
-print "We will have to divide %s income among %s artists for a total of %s per artist" % (total_income, total_artists, artist_income)
+print "We will have to divide %s income among %s bands for a total of %s per band" % (total_income, total_artists, artist_income)
   
 
