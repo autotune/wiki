@@ -1,10 +1,21 @@
-== GIT ==
+### GIT
 
-Clone remote git repo
+#### ClONE REMOTE REPO
+
 git clone $GITREPO
 
-Commit changes
+#### COMMIT CHANGES 
+
 git commit -m "Changes committed and why"
 
-Remove files in git
+#### REMOVE FILES
+
 git rm ./files*
+
+
+#### UPDATE LOCAL REPO
+
+git checkout master
+git pull --rebase origin
+
+
