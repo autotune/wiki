@@ -7,38 +7,22 @@
     wp-activate.php
     wp-admin 
     wp-blog-header.php
-
-wp-comments-post.php
-
-wp-config.php => database info and main config
-
-wp-config-sample.php
-
-wp-content
-
-  -> wp-themes
-
-  -> wp-plugins
-
-wp-cron.php
-
-wp-includes
-
-wp-links-opml.php
-
-wp-load.php
-
-wp-login.php
-
-wp-mail.php
-
-wp-settings.php
-
-wp-signup.php
-
-wp-trackback.php
-
-xmlrpc.php => xmlrpc vulnerability in 3.9.2 or less [1]
+    wp-comments-post.php
+    wp-config.php => database info and main config
+    wp-config-sample.php
+    wp-content
+      -> wp-themes
+      -> wp-plugins
+    wp-cron.php
+    wp-includes
+    wp-links-opml.php
+    wp-load.php
+    wp-login.php
+    wp-mail.php
+    wp-settings.php
+    wp-signup.php
+    wp-trackback.php
+    xmlrpc.php => xmlrpc vulnerability in 3.9.2 or less [1]
 
 
 #### PERMISSIONS 
