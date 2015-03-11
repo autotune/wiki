@@ -1,0 +1,4 @@
+### IMPROVING WORDPRESS PERFORMANCE
+
+#### PLUGINS
+p3profiler 
