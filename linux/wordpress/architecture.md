@@ -4,12 +4,9 @@
     index.php
     license.txt
     readme.html
-
-wp-activate.php
-
-wp-admin
-
-wp-blog-header.php
+    wp-activate.php
+    wp-admin 
+    wp-blog-header.php
 
 wp-comments-post.php
 
