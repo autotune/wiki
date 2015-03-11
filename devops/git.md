@@ -2,20 +2,20 @@
 
 #### ClONE REMOTE REPO
 
-git clone $GITREPO
+    git clone $GITREPO
 
 #### COMMIT CHANGES 
 
-git commit -m "Changes committed and why"
+    git commit -m "Changes committed and why"
 
 #### REMOVE FILES
 
-git rm ./files*
+    git rm ./files*
 
 
 #### UPDATE LOCAL REPO
 
-git checkout master
-git pull --rebase origin
+    git checkout master
+    git pull --rebase origin
 
 
