@@ -27,33 +27,28 @@
 
 #### PERMISSIONS 
 
-# use ftp user rather than web user
+ # use ftp user rather than web user
 
 sudo chown root:ftpuser wordpress
 
 sudo chmod 775 wordpress
 
 
-#### VARIABLES (relavent):
+#### VARIABLES (RELAVENT):
  # debug mode
 
 define('WP_DEBUG', false);
 
  # connection info
 
-define('DB_NAME', 'wordpress');
-
-define('DB_USER', 'wpsite');
-
-define('DB_PASSWORD', '134qqsdft43FSf');
-
- # may be using external database
-
-define('DB_HOST', 'localhost');
-
+    define('DB_NAME', 'wordpress');
+    define('DB_USER', 'wpsite');
+    define('DB_PASSWORD', '134qqsdft43FSf');
+    # may be using external database
+    define('DB_HOST', 'localhost');
  # do not require ftp
 
- define('FS_METHOD', 'direct');
+    define('FS_METHOD', 'direct');
 
 #### DATABASE 
 
