@@ -3,8 +3,7 @@
 
     index.php
     license.txt
-
-readme.html
+    readme.html
 
 wp-activate.php
 
