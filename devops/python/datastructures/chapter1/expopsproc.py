@@ -108,3 +108,6 @@ indie_rock_list += band
 print indie_rock_list[3]
 indie_rock_list = indie_rock_list + rock_list 
 print indie_rock_list
+
+precedense = indie_rock_list[1] + ' ' + (indie_rock_list[0] + ' ' +  indie_rock_list[3])
+print precedense
