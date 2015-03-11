@@ -1,9 +1,8 @@
 ### WORDPRESS ARCHITECTURE (relevant) 
 #### FOLDERS AND FILES
 
-index.php
-
-license.txt
+    index.php
+    license.txt
 
 readme.html
 
