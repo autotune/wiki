@@ -1,6 +1,6 @@
-#### CODE ANALYSIS
+### CODE ANALYSIS
 
-### STRACE
+#### STRACE
 
 1) View files being read and written
 
