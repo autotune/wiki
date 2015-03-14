@@ -1,0 +1,3 @@
+alias penv='cd ~/staging/ && source pythonenv/bin/activate'
+alias aenv='cd ~/wiki/devops/ansible/ansible/ && source ./hacking/env-setup'
+alias pwiki='cd ~/wiki/devops/ansible'
