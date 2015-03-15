@@ -8,7 +8,7 @@
  
 #### GREP 
 
-2) Search directories for string except for dir.
+2) Search content of files within directories for string except for dir.
 
    -r search recursively.
 
