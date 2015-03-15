@@ -1,4 +1,4 @@
-### CODE ANALYSIS
+## CODE ANALYSIS
 
 ### METHODOLOGY
 
@@ -7,38 +7,21 @@
 Example: how is the TASK field displayed on the ansible* screen?
 
     grep import bin/ansible-playbook
-
     import pkg_resources
-
     import sys
-
     import os
-
     import stat
-
     import ansible.playbook
-
     import ansible.constants as C
-
     import ansible.utils.template
-
     from ansible import errors
-
     from ansible import callbacks
-
     from ansible import utils
-
     from ansible.color import ANSIBLE_COLOR, stringc
-
     from ansible.callbacks import display
 
 
-    grep on_task_start ansible/lib/ansible/callbacks.py -A2
-
-    def on_task_start(self, name, is_conditional):
-
-        name = utils.unicode.to_bytes(name)
-
+    grep "TASK: " lib/ansible/callbacks.py
         msg = "TASK: [%s]" % name
 
 ### TOOLS
