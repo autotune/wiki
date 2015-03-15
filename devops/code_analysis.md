@@ -21,8 +21,8 @@ Example: how is the TASK field displayed on the ansible* screen?
     from ansible.callbacks import display
 
 
-    grep on_task_start ansible/lib/ansible/callbacks.py -A2
-    def on_task_start(self, name, is_conditional):
+     grep "TASK: " lib/ansible/callbacks.py
+        msg = "TASK: [%s]" % name
 
         name = utils.unicode.to_bytes(name)
 
