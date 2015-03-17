@@ -27,11 +27,15 @@ cut -d : -f 6 |
 sed 's:$:/.bash_history:' |
 xargs -d '\n' grep -H -e "$pattern" 
 
-largest_dirs
 }
 
-delete_files(){
+delete_error_logs(){
 
 find ./error_log.* -type f -print0 | xargs -0 rm -f
 
 }
+
+add_sudoer(){
+sed -i '/run any/a brian  ALL=(ALL)       ALL' /etc/sudoers
+}
+
