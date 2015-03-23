@@ -24,7 +24,7 @@ def connect():
  
     finally:
         print 'OK'
-        conn.close()
+        # conn.close()
 
 def select_query():
     connect()
@@ -53,29 +53,13 @@ def select_query():
     return databases
 
 def menu():
+    playlist = ""
     playlist = raw_input("Playlist name: ")
-    if playlist in databases:
-        print "Playlist %s found" % playlist
-    elif playlist not in databases:
-        print "Playlist %s not found" % playlist  
-    # while 
-
-def create_query_fail():
-    connect()
-    conn = ""
-    try:
-        conn = mysql.connector.query(host='localhost',
-                                       user=user,
-                                       password=password)
-
-        conn.query('CREATE DATABASE %s') % "1234"
-
-    except conn as e:
-        print(e)
-
-    finally:
-        print 'OK'
-        # conn.close()
+    while playlist not in databases:
+	print "Playlist %s not found" % playlist  
+	playlist = raw_input("Playlist name: ")
+	if playlist in databases:
+	    print "Playlist %s found" % playlist
   
 parser = argparse.ArgumentParser()
 parser.add_argument("list_playlist")
