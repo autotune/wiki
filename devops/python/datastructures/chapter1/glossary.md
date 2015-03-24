@@ -22,7 +22,7 @@ Built-in classes - bool (immutable), int(immutable), float(immutable), list(muta
 
 #### 1.3  Expressions, Operators, and Precedense
 
-Expressions - Piece of syntax which can be evaluated to some value like names, operators, or function calls. 
+Expressions - Piece of syntax which can be evaluated to some value like names, operators, or function calls. In bar = "foo", "foo" is an expression while "bar = "foo"" is a statement.  
 
 Operators - truth statements (true or false)  and arithmatic comparisons (+,-, % = modulo). 
 
@@ -46,4 +46,28 @@ Function body - everything located within a function.
 
 Activation Record - stores information relevant to current system call each time function is called. Includes namespace to manage identifiers by managed by local scope.
 
- 
+Return - Used to indicate the end of a function. None returned if not used. 
+
+#### 1.5.1 Information Passing
+
+Formal parameters - Identifiers used to describe expected parameters. For example, def music(genre, artist).
+
+Actual parameters - Objects sent by caller when invoking function. For example, genre="rock" artist="Cloud Cult".
+
+Polymorphic - defining one or more default values for parameters. austin(pop=8885400, growth, jobs), "pop" has default value unless otherwise set.
+
+Positional arguments - parameters sent to caller based on position. Such as music(verse, chorus, tag), music(3, 2, 1), 3 is verse, 2 chorus, 1 tag.  
+
+Keyword argument - allows to set function values explicitely. Like music(chorus=2) will assign chorus with a value of 2 regardless of position. 
+
+#### 1.5.2 Built in functions
+
+I/O: print, input, open.
+
+Character Encoding: ord and chr.
+
+Mathematics: abs, divmod, pow, round, and sum.
+
+Ordering: max and min. 
+
+Collections/Iterations: range, len, reversed, all, any, and map. 
