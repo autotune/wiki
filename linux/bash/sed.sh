@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# add TITLE to output command [COMMENT]
+# for example ls -lha [LSLHA} [COMMENT]
+# and make it easy for python to parse
+# or to parse in grep. 
+
 function printcmd {
     DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
     TITLE="LSLHA"
@@ -12,7 +17,7 @@ function printcmd {
     done
 
 echo "$(echo "$LSLHA"|sed "s/$/ [$TITLE]/g")"
-
+    ### <!-- EOF LSLHA --> ### 
 }
 
 printcmd
