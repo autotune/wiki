@@ -164,7 +164,7 @@ lvcreate --name lvg1 --extents 100%FREE vg2
 
 Format new logical volume:
 
-[root@584119-app5 mapper]# mkfs -t ext4 /dev/mapper/vg2-lvg1
+[root@web1 mapper]# mkfs -t ext4 /dev/mapper/vg2-lvg1
 
 Mount new logical volume:
 
@@ -172,7 +172,7 @@ Mount new logical volume:
 
 Done:
 
-[root@584119-app5 mapper]# df -Th /mnt/data
+[root@web1 mapper]# df -Th /mnt/data
 Filesystem           Type  Size  Used Avail Use% Mounted on
 /dev/mapper/vg2-lvg1
                      ext4  183G   60M  174G   1% /mnt/data/dev/mapper/vg2-lvg1
