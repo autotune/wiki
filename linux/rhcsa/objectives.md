@@ -14,7 +14,7 @@ RHCSA exam candidates should be able to accomplish the tasks below without assis
 	Locate, read, and use system documentation including man, info, and files in /usr/share/doc
 	Note: Red Hat may use applications during the exam that are not included in Red Hat Enterprise Linux for the purpose of evaluating candidate's abilities to meet this objective.
 
-	Operate running systems
+#### Operate running systems
 	Boot, reboot, and shut down a system normally
 	Boot systems into different targets manually
 	Interrupt the boot process in order to gain access to a system
@@ -24,19 +24,19 @@ RHCSA exam candidates should be able to accomplish the tasks below without assis
 	Start and stop virtual machines
 	Start, stop, and check the status of network services
 	Securely transfer files between systems
-	Configure local storage
+#### Configure local storage
 	List, create, delete partitions on MBR and GPT disks
 	Create and remove physical volumes, assign physical volumes to volume groups, and create and delete logical volumes
 	Configure systems to mount file systems at boot by Universally Unique ID (UUID) or label
 	Add new partitions and logical volumes, and swap to a system non-destructively
-	Create and configure file systems
+#### Create and configure file systems
 	Create, mount, unmount, and use vfat, ext4, and xfs file systems
 	Mount and unmount CIFS and NFS network file systems
 	Extend existing logical volumes
 	Create and configure set-GID directories for collaboration
 	Create and manage Access Control Lists (ACLs)
 	Diagnose and correct file permission problems
-	Deploy, configure, and maintain systems
+#### Deploy, configure, and maintain systems
 	Configure networking and hostname resolution statically or dynamically
 	Schedule tasks using at and cron
 	Start and stop services and configure services to start automatically at boot
@@ -50,12 +50,12 @@ RHCSA exam candidates should be able to accomplish the tasks below without assis
 	Install and update software packages from Red Hat Network, a remote repository, or from the local file system
 	Update the kernel package appropriately to ensure a bootable system
 	Modify the system bootloader
-	Manage users and groups
+#### Manage users and groups
 	Create, delete, and modify local user accounts
 	Change passwords and adjust password aging for local user accounts
 	Create, delete, and modify local groups and group memberships
 	Configure a system to use an existing authentication service for user and group information
-	Manage security
+#### Manage security
 	Configure firewall settings using firewall-config, firewall-cmd, or iptables
 	Configure key-based authentication for SSH
 	Set enforcing and permissive modes for SELinux
