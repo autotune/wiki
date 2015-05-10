@@ -1,0 +1,6 @@
+http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+curl -IL github.com => return 
+301 => Moved permanently. Usually from an htaccess 301 redirect. 
+302 => Found. 
+502 => Bad gateway. See: cloudflare, or nginx. Usually indicates proxy error.
+503 => Service Unavailable 
