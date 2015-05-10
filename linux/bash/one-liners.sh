@@ -39,3 +39,11 @@ add_sudoer(){
 sed -i '/run any/a brian  ALL=(ALL)       ALL' /etc/sudoers
 }
 
+check_cron(){
+
+for user in $(cut -f1 -d: /etc/passwd);  
+do     
+    crontab -u $user -l;  
+done
+
+}
