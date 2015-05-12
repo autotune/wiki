@@ -62,3 +62,15 @@ puppet resource cron puppet-agent ensure=present user=root minute=30 command='/u
     }
 
 #### NODE TEST
+
+[root@controller puppet]# puppet module install packer.tar.gz
+    Notice: Preparing to install into /etc/puppet/modules ...
+    Notice: Downloading from https://forgeapi.puppetlabs.com ...
+
+    Notice: Installing -- do not interrupt ...
+    /etc/puppet/modules
+    └─┬ counsyl-packer (v0.9.15)
+      └─┬ counsyl-sys (v0.9.18)
+	└── puppetlabs-stdlib (v4.6.0)
+
+
