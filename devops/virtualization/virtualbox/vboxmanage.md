@@ -35,6 +35,8 @@ Requirements:
 
     VBoxManage createvm --name puppet-test --basefolder /Volumes/Macintosh HD 2 --register 
 
-2b) Attach hard drive
+2b) Attach controller 
 
-2c) Attach Network Interface Card
+2c) Attach hard drive
+
+2d) Attach Network Interface Card
