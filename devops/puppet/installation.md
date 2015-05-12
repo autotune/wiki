@@ -37,8 +37,11 @@ dns_alt_names = localhost
 #### PUPPET MASTER  
 
 [root@controller ~]# screen -S puppet
+
 [root@controller ~]# puppet master --verbose --no-daemonize
+
 [root@controller puppet]# puppet resource service puppet ensure=running enable=true
+
     Notice: /Service[puppet]/ensure: ensure changed 'stopped' to 'running'
     service { 'puppet':
       ensure => 'running',
@@ -49,14 +52,13 @@ dns_alt_names = localhost
 
 puppet resource cron puppet-agent ensure=present user=root minute=30 command='/usr/bin/puppet agent --onetime --no-daemonize --splay'
 
-Notice: /Cron[puppet-agent]/ensure: created
-cron { 'puppet-agent':
-  ensure  => 'present',
-  command => '/usr/bin/puppet agent --onetime --no-daemonize --splay',
-  minute  => ['30'],
-  target  => 'root',
-  user    => 'root',
-}
-You have new mail in /var/spool/mail/root
+    Notice: /Cron[puppet-agent]/ensure: created
+    cron { 'puppet-agent':
+      ensure  => 'present',
+      command => '/usr/bin/puppet agent --onetime --no-daemonize --splay',
+      minute  => ['30'],
+      target  => 'root',
+      user    => 'root',
+    }
 
 #### NODE TEST
