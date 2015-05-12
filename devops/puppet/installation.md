@@ -38,23 +38,6 @@ dns_alt_names = localhost
 
 [root@controller ~]# screen -S puppet
 [root@controller ~]# puppet master --verbose --no-daemonize
-    Info: Creating a new SSL key for ca
-    Info: Creating a new SSL certificate request for ca
-    Info: Certificate Request fingerprint (SHA256): BA:11:9A:06:54:EE:DF:45:D3:30:4A:C4:D6:85:74:2D:8B:8F:DA:E5:25:81:E1:84:BA:46:F6:F5:6E:AC:25:CC
-    Notice: Signed certificate request for ca
-    Info: Creating a new certificate revocation list
-    Info: Creating a new SSL key for controller
-    Info: csr_attributes file loading from /etc/puppet/csr_attributes.yaml
-    Info: Creating a new SSL certificate request for controller
-    Info: Certificate Request fingerprint (SHA256): 67:BA:C9:CC:62:E7:C6:34:4F:7B:02:52:AF:3B:7F:5A:4A:00:BA:F0:26:6C:B5:76:A2:B4:69:75:39:5A:39:A7
-    Notice: controller has a waiting certificate request
-    Notice: Signed certificate request for controller
-    Notice: Removing file Puppet::SSL::CertificateRequest controller at '/var/lib/puppet/ssl/ca/requests/controller.pem'
-    Notice: Removing file Puppet::SSL::CertificateRequest controller at '/var/lib/puppet/ssl/certificate_requests/controller.pem'
-Notice: Starting Puppet master version 3.7.5
-
-
-
 [root@controller puppet]# puppet resource service puppet ensure=running enable=true
     Notice: /Service[puppet]/ensure: ensure changed 'stopped' to 'running'
     service { 'puppet':
