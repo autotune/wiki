@@ -10,6 +10,15 @@
 
 #### Storage
 
+1) Add controller
+    VBoxManage storagectl cosnode1 --name cosnode1 --add scsi --bootable on
+
+2) Add hard drive
+    VBoxManage createhd --filename "/Volumes/Macintosh HD 2/rhcs/cosnode1/cosnode1" --format VDI --size 10000 --format vdi --variant standard
+
+3) attach hard drive
+    VBoxManage storageattach "cosnode1" --storagectl "cosnode1" --port 0 --device 0 --type hdd --medium /Volumes/Macintosh\ HD\ 2/rhcs/cosnode1/cosnode1.vdi
+
 #### Virtual Machines
 
 
@@ -36,7 +45,10 @@ Requirements:
     VBoxManage createvm --name puppet-test --basefolder /Volumes/Macintosh HD 2 --register 
 
 2b) Attach controller 
+   1) create controller
+    VBoxManage storagectl cosnode1 --name cosnode1 --add scsi --bootable on
 
 2c) Attach hard drive
-
+   1) attache hard drive
+     
 2d) Attach Network Interface Card
