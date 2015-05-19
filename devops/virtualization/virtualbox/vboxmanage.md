@@ -22,6 +22,12 @@
 
     VBoxManage storageattach "cosnode1" --storagectl "cosnode1" --port 0 --device 0 --type hdd --medium /Volumes/Macintosh\ HD\ 2/rhcs/cosnode1/cosnode1.vdi
 
+4) attach dvd drive
+
+    VBoxManage modifyvm cosnode1 --boot1 dvd
+    VBoxManage storageattach "cosnode1" --storagectl "cosnode1" --port 1 --device 0 --type dvddrive --medium /Volumes/Macintosh\ HD/linuxisos/CentOS-6.5-x86_64-minimal.iso
+
+
 #### Virtual Machines
 
 
