@@ -8,11 +8,11 @@ http://bigthinkingapplied.com/creating-a-ha-cluster-with-red-hat-cluster-suite-p
 
 3.0 Shared disk: data.vdi => db files. 
 
-  3.1 Shared disk: www_data => web files. 
+  \3.1 Shared disk: www_data => web files. 
 
-  3.2 Shared disk: qdisk.vdi => quorum disk. 
+  \3.2 Shared disk: qdisk.vdi => quorum disk. 
 
-  3.3 Two host-only networks. 
+  \3.3 Two host-only networks. 
 
 4.0 Two host-only networks
 
