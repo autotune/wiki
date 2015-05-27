@@ -1,4 +1,4 @@
-## RHCS Cluster Build
+# RHCS Cluster Build
 
 http://bigthinkingapplied.com/creating-a-ha-cluster-with-red-hat-cluster-suite-part-2/
 
@@ -21,7 +21,6 @@ VBoxManage createvm --name sqlstgnd1 --basefolder "/Volumes/Macintosh HD 2/rhcs/
 VBoxManage createvm --name sqlstgnd2 --basefolder "/Volumes/Macintosh HD 2/rhcs/" --register 
 
 ### STORAGE
-=======
 
 #### CONTROLLER 
 
