@@ -8,7 +8,7 @@
 
 #### NETWORKING 
 
-1) Add a nat network
+1) Attach a nat network
 
     VBoxManage modifyvm "rhel7-server" --nic2 natnetwork --nat-network2 "rhel7-network"
 
