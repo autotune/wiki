@@ -1,14 +1,19 @@
 ### VirtualBox 
 
-#### VBoxManage
+#### POWER
+
+1) Power on/off
+
+    VBoxManage controlvm mybox poweroff
+
+#### NETWORKING 
 
 1) Add a nat network
 
     VBoxManage modifyvm "rhel7-server" --nic2 natnetwork --nat-network2 "rhel7-network"
 
-#### Networking 
 
-#### Storage
+#### STORAGE
 
 1) Add controller
 
@@ -26,10 +31,6 @@
 
     VBoxManage modifyvm cosnode1 --boot1 dvd
     VBoxManage storageattach "cosnode1" --storagectl "cosnode1" --port 1 --device 0 --type dvddrive --medium /Volumes/Macintosh\ HD/linuxisos/CentOS-6.5-x86_64-minimal.iso
-
-
-#### Virtual Machines
-
 
 #### Exercises 
 
