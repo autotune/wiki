@@ -32,7 +32,7 @@ VBoxManage createvm --name sqlstgnd2 --basefolder "/Volumes/Macintosh HD 2/rhcs/
     VBoxManage storagectl sqlstgnd2 --name mysqlstgclu --add scsi --bootable on
 
 
-##### DISKS
+#### DISKS
 
 1.0 Create hard disks 
 
