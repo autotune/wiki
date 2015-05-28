@@ -3,10 +3,13 @@
 http://bigthinkingapplied.com/creating-a-ha-cluster-with-red-hat-cluster-suite-part-2/
 
 export MYRHCSDIR="/my/rhcs/dir" 
+export DISTRO="/Volumes/Macintosh HD/linuxisos/CentOS-6.5-x86_64-minimal.iso"
+export KSURL="https://github.com/autotune/wiki/blob/master/linux/rhcs/ks.cfg"
+export ANSCFG="https://github.com/autotune/wiki/blob/master/linux/rhcs/rhcs-playbook.yaml"
 
 1.0 Cluster Name: mysqlstgclu
 
-2.0 Nodes: sqlstgnd1, sqlstgnd2
+2.0 Nodes: sqlstgnd1 => 1024MB RAM, sqlstgnd2 => 1024MB RAM
 
 3.0 Shared disks
 
@@ -17,17 +20,43 @@ export MYRHCSDIR="/my/rhcs/dir"
   - 3.3 Shared disk: qdisk.vdi => quorum disk. 
 
 
-4.0 Two host-only networks
+4.0 Three host-only networks
 
-  - 4.1 
+  - 4.1 192.168.1.0 => internal network for post-install scripts
 
-  - 4.2 
+  - 4.2 192.168.2.0 => rhcs network 1
+
+  - 4.3 192.168.3.0 => rhcs network 2
 
 ### VIRTUAL MACHINE 
 
-VBoxManage createvm --name sqlstgnd1 --basefolder "$MYRHCSDIR" --register 
+1) Create and register virtual machines 
 
-VBoxManage createvm --name sqlstgnd2 --basefolder "$MYRHCSDIR" --register 
+    VBoxManage createvm --name sqlstgnd1 --basefolder "$MYRHCSDIR" --register 
+    
+    VBoxManage createvm --name sqlstgnd2 --basefolder "$MYRHCSDIR" --register 
+
+2) Modify memory to 1024 MB
+
+    VBoxManage modifyvm sqlstgnd1 --memory 1024
+    
+    VBoxManage modifyvm sqlstgnd2 --memory 1024
+
+### NETWORKING
+
+1). Create 2 new host only networks
+
+    vboxmanage hostonlyif create 
+
+    vboxmanage hostonlyif ipconfig vboxnet1 --ip 192.168.2.1 
+
+    vboxmanage hostonlyif ipconfig vboxnet2 --ip 192.168.3.1   
+    
+2). Attach host only networks to nodes 
+
+    vboxmanage modifyvm sqlstgnd1 --hostonlyadapter2 vboxnet1
+    vboxmanage modifyvm sqlstgnd1 --hostonlyadapter3 vboxnet2
+
 
 ### STORAGE
 
@@ -48,7 +77,7 @@ VBoxManage createvm --name sqlstgnd2 --basefolder "$MYRHCSDIR" --register
 
     VboxManage createhd --filename "MYRHCSDIR/sqlstgnd2/sqlstgnd2.vdi" --size 10000 --variant Fixed
 
-    VboxManage createhd --filename "$MYRHCSDIR/shared/qdisk.vdi" --size 10000 --variant Fixed  
+    VboxManage createhd --filename "$MYRHCSDIR/shared/qdisk.vdi" --size 20 --variant Fixed  
 
     VboxManage createhd --filename "$MYRHCSDIR/shared/data.vdi" --size 10000 --variant Fixed  
 
@@ -56,22 +85,36 @@ VBoxManage createvm --name sqlstgnd2 --basefolder "$MYRHCSDIR" --register
 
 2.0 Attach hard disks
 
-    VboxManage storageattach sqlstgnd1 --storagectl mysqlstgclu --port 0 --type hdd --medium "$MYRHCSDIR/sqlstgnd1/sqlstgnd1.vdi" --mtype shareable
+    VBoxManage storageattach "sqlstgnd1" --storagectl "mysqlstgclu" --port 0 --device 0 --type dvddrive --medium "$DISTRO"
 
-    VboxManage storageattach sqlstgnd1 --storagectl mysqlstgclu --port 1 --type hdd --medium "$MYRHCSDIR/shared/data.vdi" --mtype shareable 
+    VboxManage storageattach sqlstgnd1 --storagectl mysqlstgclu --port 1 --type hdd --medium "$MYRHCSDIR/sqlstgnd1/sqlstgnd1.vdi" --mtype shareable
 
-    VboxManage storageattach sqlstgnd1 --storagectl mysqlstgclu --port 2 --type hdd --medium "$MYRHCSDIR/shared/qdisk.vdi" --mtype shareable
+    VboxManage storageattach sqlstgnd1 --storagectl mysqlstgclu --port 2 --type hdd --medium "$MYRHCSDIR/shared/data.vdi" --mtype shareable 
 
-    VboxManage storageattach sqlstgnd1 --storagectl mysqlstgclu --port 3 --type hdd --medium "$MYRHCSDIR/shared/docroot_data.vdi" --mtype shareable
+    VboxManage storageattach sqlstgnd1 --storagectl mysqlstgclu --port 3 --type hdd --medium "$MYRHCSDIR/shared/qdisk.vdi" --mtype shareable
 
-     VboxManage storageattach sqlstgnd2 --storagectl mysqlstgclu --port 0 --type hdd --medium "$MYRHCSDIR/rhcs/sqlstgnd2/sqlstgnd2.vdi" --mtype shareable
+    VboxManage storageattach sqlstgnd1 --storagectl mysqlstgclu --port 4 --type hdd --medium "$MYRHCSDIR/shared/docroot_data.vdi" --mtype shareable
 
-    VboxManage storageattach sqlstgnd2 --storagectl mysqlstgclu --port 1 --type hdd --medium "$MYRHCSDIR/rhcs/shared/data.vdi" --mtype shareable 
+    VBoxManage storageattach "sqlstgnd2" --storagectl "mysqlstgclu" --port 0 --device 0 --type dvddrive --medium "$DISTRO" 
 
-    VboxManage storageattach sqlstgnd2 --storagectl mysqlstgclu --port 2 --type hdd --medium "$MYRHCSDIR/shared/qdisk.vdi" --mtype shareable
+    VboxManage storageattach sqlstgnd2 --storagectl mysqlstgclu --port 1 --type hdd --medium "$MYRHCSDIR/sqlstgnd2/sqlstgnd2.vdi" --mtype shareable
 
-    VboxManage storageattach sqlstgnd2 --storagectl mysqlstgclu --port 3 --type hdd --medium "$MYRHCSDIR/shared/docroot_data.vdi" --mtype shareable
+    VboxManage storageattach sqlstgnd2 --storagectl mysqlstgclu --port 2 --type hdd --medium "$MYRHCSDIR/shared/data.vdi" --mtype shareable 
 
+    VboxManage storageattach sqlstgnd2 --storagectl mysqlstgclu --port 3 --type hdd --medium "$MYRHCSDIR/shared/qdisk.vdi" --mtype shareable
+
+    VboxManage storageattach sqlstgnd2 --storagectl mysqlstgclu --port 4 --type hdd --medium "$MYRHCSDIR/shared/docroot_data.vdi" --mtype shareable
+
+#### INITIAL BOOT 
+
+    VBoxManage startvm sqlstgnd1
+
+    VBoxManage startvm sqlstgnd2
+
+
+#### TODO
+
+    Add RAID 10 drives instead of standard hard drives. 
 
 2. PACKAGES
 
