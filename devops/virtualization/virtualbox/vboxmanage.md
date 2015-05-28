@@ -32,6 +32,10 @@
     VBoxManage modifyvm cosnode1 --boot1 dvd
     VBoxManage storageattach "cosnode1" --storagectl "cosnode1" --port 1 --device 0 --type dvddrive --medium /Volumes/Macintosh\ HD/linuxisos/CentOS-6.5-x86_64-minimal.iso
 
+5) Delete hard drive
+
+    VBoxManage closemedium disk qdisk.vdi --delete
+
 #### Exercises 
 
 1) Create a standard harddrive 10,000 MB in size
