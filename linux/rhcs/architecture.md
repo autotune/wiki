@@ -42,11 +42,34 @@ VBoxManage createvm --name sqlstgnd2 --basefolder "/Volumes/Macintosh HD 2/rhcs/
 
 1.0 Create hard disks 
 
+    VboxManage createhd --filename "/Volumes/Macintosh HD 2/rhcs/sqlstgnd1/sqlstgnd1.vdi" --size 10000 --variant Fixed
+
+    VboxManage createhd --filename "/Volumes/Macintosh HD 2/rhcs/sqlstgnd2/sqlstgnd2.vdi" --size 10000 --variant Fixed
+
     VboxManage createhd --filename "/Volumes/Macintosh HD 2/rhcs/shared/qdisk.vdi" --size 10000 --variant Fixed  
 
     VboxManage createhd --filename "/Volumes/Macintosh HD 2/rhcs/shared/data.vdi" --size 10000 --variant Fixed  
 
     VboxManage createhd --filename "/Volumes/Macintosh HD 2/rhcs/shared/docroot_data.vdi" --size 10000 --variant Fixed
+
+2.0 Attach hard disks
+
+    VboxManage storageattach sqlstgnd1 --storagectl mysqlstgclu --port 0 --type hdd --medium /Volumes/Macintosh\ HD\ 2/rhcs/sqlstgnd1/sqlstgnd1.vdi --mtype shareable
+
+    VboxManage storageattach sqlstgnd1 --storagectl mysqlstgclu --port 1 --type hdd --medium /Volumes/Macintosh\ HD\ 2/rhcs/shared/data.vdi --mtype shareable 
+
+    VboxManage storageattach sqlstgnd1 --storagectl mysqlstgclu --port 2 --type hdd --medium /Volumes/Macintosh\ HD\ 2/rhcs/shared/qdisk.vdi --mtype shareable
+
+    VboxManage storageattach sqlstgnd1 --storagectl mysqlstgclu --port 3 --type hdd --medium /Volumes/Macintosh\ HD\ 2/rhcs/shared/docroot_data.vdi --mtype shareable
+
+     VboxManage storageattach sqlstgnd2 --storagectl mysqlstgclu --port 0 --type hdd --medium /Volumes/Macintosh\ HD\ 2/rhcs/sqlstgnd2/sqlstgnd2.vdi --mtype shareable
+
+    VboxManage storageattach sqlstgnd2 --storagectl mysqlstgclu --port 1 --type hdd --medium /Volumes/Macintosh\ HD\ 2/rhcs/shared/data.vdi --mtype shareable 
+
+    VboxManage storageattach sqlstgnd2 --storagectl mysqlstgclu --port 2 --type hdd --medium /Volumes/Macintosh\ HD\ 2/rhcs/shared/qdisk.vdi --mtype shareable
+
+    VboxManage storageattach sqlstgnd2 --storagectl mysqlstgclu --port 3 --type hdd --medium /Volumes/Macintosh\ HD\ 2/rhcs/shared/docroot_data.vdi --mtype shareable
+
 
 2. PACKAGES
 
