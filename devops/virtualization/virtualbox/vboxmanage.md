@@ -32,9 +32,15 @@
     VBoxManage modifyvm cosnode1 --boot1 dvd
     VBoxManage storageattach "cosnode1" --storagectl "cosnode1" --port 1 --device 0 --type dvddrive --medium /Volumes/Macintosh\ HD/linuxisos/CentOS-6.5-x86_64-minimal.iso
 
-5) Delete hard drive
+5) detach hard drive
+ 
+        
+
+6) Delete hard drive
 
     VBoxManage closemedium disk qdisk.vdi --delete
+
+
 
 #### Exercises 
 
