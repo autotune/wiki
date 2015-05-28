@@ -2,6 +2,8 @@
 
 http://bigthinkingapplied.com/creating-a-ha-cluster-with-red-hat-cluster-suite-part-2/
 
+export MYRHCSDIR="/my/rhcs/dir" 
+
 1.0 Cluster Name: mysqlstgclu
 
 2.0 Nodes: sqlstgnd1, sqlstgnd2
@@ -23,9 +25,9 @@ http://bigthinkingapplied.com/creating-a-ha-cluster-with-red-hat-cluster-suite-p
 
 ### VIRTUAL MACHINE 
 
-VBoxManage createvm --name sqlstgnd1 --basefolder "/Volumes/Macintosh HD 2/rhcs/" --register 
+VBoxManage createvm --name sqlstgnd1 --basefolder "$MYRHCSDIR" --register 
 
-VBoxManage createvm --name sqlstgnd2 --basefolder "/Volumes/Macintosh HD 2/rhcs/" --register 
+VBoxManage createvm --name sqlstgnd2 --basefolder "$MYRHCSDIR" --register 
 
 ### STORAGE
 
@@ -42,33 +44,33 @@ VBoxManage createvm --name sqlstgnd2 --basefolder "/Volumes/Macintosh HD 2/rhcs/
 
 1.0 Create hard disks 
 
-    VboxManage createhd --filename "/Volumes/Macintosh HD 2/rhcs/sqlstgnd1/sqlstgnd1.vdi" --size 10000 --variant Fixed
+    VboxManage createhd --filename "$MYRHCSDIR/sqlstgnd1/sqlstgnd1.vdi" --size 10000 --variant Fixed
 
-    VboxManage createhd --filename "/Volumes/Macintosh HD 2/rhcs/sqlstgnd2/sqlstgnd2.vdi" --size 10000 --variant Fixed
+    VboxManage createhd --filename "MYRHCSDIR/sqlstgnd2/sqlstgnd2.vdi" --size 10000 --variant Fixed
 
-    VboxManage createhd --filename "/Volumes/Macintosh HD 2/rhcs/shared/qdisk.vdi" --size 10000 --variant Fixed  
+    VboxManage createhd --filename "$MYRHCSDIR/shared/qdisk.vdi" --size 10000 --variant Fixed  
 
-    VboxManage createhd --filename "/Volumes/Macintosh HD 2/rhcs/shared/data.vdi" --size 10000 --variant Fixed  
+    VboxManage createhd --filename "$MYRHCSDIR/shared/data.vdi" --size 10000 --variant Fixed  
 
-    VboxManage createhd --filename "/Volumes/Macintosh HD 2/rhcs/shared/docroot_data.vdi" --size 10000 --variant Fixed
+    VboxManage createhd --filename "$MYRHCSDIR/shared/docroot_data.vdi" --size 10000 --variant Fixed
 
 2.0 Attach hard disks
 
-    VboxManage storageattach sqlstgnd1 --storagectl mysqlstgclu --port 0 --type hdd --medium /Volumes/Macintosh\ HD\ 2/rhcs/sqlstgnd1/sqlstgnd1.vdi --mtype shareable
+    VboxManage storageattach sqlstgnd1 --storagectl mysqlstgclu --port 0 --type hdd --medium "$MYRHCSDIR/sqlstgnd1/sqlstgnd1.vdi" --mtype shareable
 
-    VboxManage storageattach sqlstgnd1 --storagectl mysqlstgclu --port 1 --type hdd --medium /Volumes/Macintosh\ HD\ 2/rhcs/shared/data.vdi --mtype shareable 
+    VboxManage storageattach sqlstgnd1 --storagectl mysqlstgclu --port 1 --type hdd --medium "$MYRHCSDIR/shared/data.vdi" --mtype shareable 
 
-    VboxManage storageattach sqlstgnd1 --storagectl mysqlstgclu --port 2 --type hdd --medium /Volumes/Macintosh\ HD\ 2/rhcs/shared/qdisk.vdi --mtype shareable
+    VboxManage storageattach sqlstgnd1 --storagectl mysqlstgclu --port 2 --type hdd --medium "$MYRHCSDIR/shared/qdisk.vdi" --mtype shareable
 
-    VboxManage storageattach sqlstgnd1 --storagectl mysqlstgclu --port 3 --type hdd --medium /Volumes/Macintosh\ HD\ 2/rhcs/shared/docroot_data.vdi --mtype shareable
+    VboxManage storageattach sqlstgnd1 --storagectl mysqlstgclu --port 3 --type hdd --medium "$MYRHCSDIR/shared/docroot_data.vdi" --mtype shareable
 
-     VboxManage storageattach sqlstgnd2 --storagectl mysqlstgclu --port 0 --type hdd --medium /Volumes/Macintosh\ HD\ 2/rhcs/sqlstgnd2/sqlstgnd2.vdi --mtype shareable
+     VboxManage storageattach sqlstgnd2 --storagectl mysqlstgclu --port 0 --type hdd --medium "$MYRHCSDIR/rhcs/sqlstgnd2/sqlstgnd2.vdi" --mtype shareable
 
-    VboxManage storageattach sqlstgnd2 --storagectl mysqlstgclu --port 1 --type hdd --medium /Volumes/Macintosh\ HD\ 2/rhcs/shared/data.vdi --mtype shareable 
+    VboxManage storageattach sqlstgnd2 --storagectl mysqlstgclu --port 1 --type hdd --medium "$MYRHCSDIR/rhcs/shared/data.vdi" --mtype shareable 
 
-    VboxManage storageattach sqlstgnd2 --storagectl mysqlstgclu --port 2 --type hdd --medium /Volumes/Macintosh\ HD\ 2/rhcs/shared/qdisk.vdi --mtype shareable
+    VboxManage storageattach sqlstgnd2 --storagectl mysqlstgclu --port 2 --type hdd --medium "$MYRHCSDIR/shared/qdisk.vdi" --mtype shareable
 
-    VboxManage storageattach sqlstgnd2 --storagectl mysqlstgclu --port 3 --type hdd --medium /Volumes/Macintosh\ HD\ 2/rhcs/shared/docroot_data.vdi --mtype shareable
+    VboxManage storageattach sqlstgnd2 --storagectl mysqlstgclu --port 3 --type hdd --medium "$MYRHCSDIR/shared/docroot_data.vdi" --mtype shareable
 
 
 2. PACKAGES
