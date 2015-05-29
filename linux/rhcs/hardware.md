@@ -145,7 +145,6 @@ export ANSCFG="https://github.com/autotune/wiki/blob/master/linux/rhcs/rhcs-play
 
 #### TODO
 
-    Add RAID 10 drives instead of standard hard drives. 
 
 2. PACKAGES
 
