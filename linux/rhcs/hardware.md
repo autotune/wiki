@@ -48,7 +48,7 @@ export ANSCFG="https://github.com/autotune/wiki/blob/master/linux/rhcs/rhcs-play
 
 1)  Create 3 new host only networks and placeholder. 
 
-    vboxmanage hostonlyif create => x4
+    VBoxManage hostonlyif create => x4
 
     VBoxManage hostonlyif ipconfig vboxnet0 --ip 192.168.1.0 
 
@@ -60,15 +60,17 @@ export ANSCFG="https://github.com/autotune/wiki/blob/master/linux/rhcs/rhcs-play
     
 2)  Attach host only adapters to host networks
 
-    VBoxManage modifyvm sqlstgnd1 --hostonlyadapter1 vboxnet0
-
     VBoxManage modifyvm sqlstgnd1 --hostonlyadapter2 vboxnet1
 
     VBoxManage modifyvm sqlstgnd1 --hostonlyadapter3 vboxnet2
 
-    VBoxManage modifyvm sqlstgnd2 --hostonlyadapter1 vboxnet0
+    VBoxManage modifyvm sqlstgnd1 --hostonlyadapter4 vboxnet3
 
     VBoxManage modifyvm sqlstgnd2 --hostonlyadapter2 vboxnet1
+
+    VBoxManage modifyvm sqlstgnd2 --hostonlyadapter3 vboxnet2
+
+    VBoxManage modifyvm sqlstgnd2 --hostonlyadapter4 vboxnet3
 
 3) Add networks to network interfaces on virtual machines
 	
