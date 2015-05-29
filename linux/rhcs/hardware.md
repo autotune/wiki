@@ -44,18 +44,47 @@ export ANSCFG="https://github.com/autotune/wiki/blob/master/linux/rhcs/rhcs-play
 
 ### NETWORKING
 
-1). Create 2 new host only networks
+1)  Create 3 new host only networks
 
-    vboxmanage hostonlyif create 
+    vboxmanage hostonlyif create => x3
 
-    vboxmanage hostonlyif ipconfig vboxnet1 --ip 192.168.2.1 
+    VBoxManage hostonlyif ipconfig vboxnet0 --ip 192.168.1.0
 
-    vboxmanage hostonlyif ipconfig vboxnet2 --ip 192.168.3.1   
+    VBoxManage hostonlyif ipconfig vboxnet1 --ip 192.168.2.0
+
+    VBoxManage hostonlyif ipconfig vboxnet2 --ip 192.168.3.0
+
+    VBoxManage hostonlyif ipconfig vboxnet3 --ip 192.168.4.0
     
-2). Attach host only networks to nodes 
+2)  Attach host only adapters to host networks
 
-    vboxmanage modifyvm sqlstgnd1 --hostonlyadapter2 vboxnet1
-    vboxmanage modifyvm sqlstgnd1 --hostonlyadapter3 vboxnet2
+    VBoxManage modifyvm sqlstgnd1 --hostonlyadapter1 vboxnet0
+
+    VBoxManage modifyvm sqlstgnd1 --hostonlyadapter2 vboxnet1
+
+    VBoxManage modifyvm sqlstgnd1 --hostonlyadapter3 vboxnet2
+
+    VBoxManage modifyvm sqlstgnd2 --hostonlyadapter1 vboxnet0
+
+    VBoxManage modifyvm sqlstgnd2 --hostonlyadapter2 vboxnet1
+
+3) Add networks to network interfaces on virtual machines
+	
+    VBoxManage modifyvm sqlstgnd1 --nic1 nat
+
+    VBoxManage modifyvm sqlstgnd1 --nic2 hostonly
+
+    VBoxManage modifyvm sqlstgnd1 --nic3 hostonly
+
+    VBoxManage modifyvm sqlstgnd1 --nic4 hostonly
+
+    VBoxManage modifyvm sqlstgnd2 --nic1 nat
+
+    VBoxManage modifyvm sqlstgnd2 --nic2 hostonly
+
+    VBoxManage modifyvm sqlstgnd2 --nic3 hostonly
+
+    VBoxManage modifyvm sqlstgnd2 --nic4 hostonly
 
 
 ### STORAGE
