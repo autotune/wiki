@@ -22,6 +22,8 @@ export ANSCFG="https://github.com/autotune/wiki/blob/master/linux/rhcs/rhcs-play
 
 4.0 Three host-only networks
 
+  - 4.0 172.0.0.0 => this is used as a placeholder since vboxnet0 would have to map to nic1 if enabled. It will not actually be used. 
+
   - 4.1 192.168.1.0 => internal network for post-install scripts
 
   - 4.2 192.168.2.0 => rhcs network 1
@@ -44,11 +46,11 @@ export ANSCFG="https://github.com/autotune/wiki/blob/master/linux/rhcs/rhcs-play
 
 ### NETWORKING
 
-1)  Create 3 new host only networks
+1)  Create 3 new host only networks and placeholder. 
 
-    vboxmanage hostonlyif create => x3
+    vboxmanage hostonlyif create => x4
 
-    VBoxManage hostonlyif ipconfig vboxnet0 --ip 192.168.1.0
+    VBoxManage hostonlyif ipconfig vboxnet0 --ip 192.168.1.0 
 
     VBoxManage hostonlyif ipconfig vboxnet1 --ip 192.168.2.0
 
