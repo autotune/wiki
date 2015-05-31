@@ -12,7 +12,7 @@
         "iso_checksum_type": "sha1",
 
         "boot_command": [
-            "<tab> ks=http://contrasting.org/rhcs/ks.cfg ksdevice=eth0<enter><wait>"
+            "<tab> ks=http://contrasting.org/rhcs/ks.cfg ksdevice=eth0 <enter><wait>"
         ],
         "boot_wait": "13s",
 
@@ -27,8 +27,12 @@
         "vboxmanage": [
             ["modifyvm", "{{.Name}}", "--memory", "1024"],
             ["modifyvm", "{{.Name}}", "--cpus", "2"],
-            ["modifyvm", "{{.Name}}", "--hostonlyadapter2", "vboxnet1"],
-            ["modifyvm", "{{.Name}}", "--nic2", "hostonly"]
+            ["modifyvm", "{{.Name}}", "--hostonlyadapter2", "vboxnet0"],
+            ["modifyvm", "{{.Name}}", "--hostonlyadapter3", "vboxnet1"],
+            ["modifyvm", "{{.Name}}", "--hostonlyadapter4", "vboxnet2"],
+            ["modifyvm", "{{.Name}}", "--nic2", "hostonly"],
+            ["modifyvm", "{{.Name}}", "--nic3", "hostonly"],
+            ["modifyvm", "{{.Name}}", "--nic4", "hostonly"]
         ],
 
         "shutdown_command": "echo 'vagrant'|sudo -S /sbin/halt -h -p"
