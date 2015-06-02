@@ -26,8 +26,9 @@ export ANSCFG="https://github.com/autotune/wiki/blob/master/linux/rhcs/rhcs-play
 
   - 4.1 192.168.1.0 => internal network for post-install scripts
 
-        - 192.168.1.1 => mystgclu1
-        - 192.168.1.2 => mystgclu2
+  - - 192.168.1.1 => mystgclu1
+
+  --192.168.1.2 => mystgclu2
        
   - 4.2 192.168.2.0 => rhcs network 1
         - 192.168.2.1 => 
