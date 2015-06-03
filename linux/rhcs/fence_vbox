@@ -1,5 +1,6 @@
 #!/bin/bash
 # /usr/bin/vbox
+# http://meinit.nl/virtualbox-fencing-and-red-hat-enterprise-linux-cluster-suite
 
 # Script to stop and start a virtual machine.
 # The only required argument is machinename.
