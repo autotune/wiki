@@ -42,6 +42,8 @@ export ANSCFG="https://github.com/autotune/wiki/blob/master/linux/rhcs/rhcs-play
 
   - - 192.168.3.2 => mystgclu2 
 
+  - 4.2 10.37.129.2 => vnic1. This is used to connect from guest to host and act as power fencing device.
+
 
 ### VIRTUAL MACHINE 
 
