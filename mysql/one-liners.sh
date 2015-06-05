@@ -10,6 +10,9 @@ slow_query_log() {
   mysql -e "show variables like '%slow%';"
 }
 
-slow_query_log
-  
+select_user() {
+
+  select user,host from mysql.user where user like '%herpderp%';
+
+} 
 
