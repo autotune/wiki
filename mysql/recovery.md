@@ -1,3 +1,7 @@
+### RESTORE DATABASE
+
+    gunzip < awesomedb.sql.gz | mysql awesomedb
+
 ### CRASHED TABLES 
 
     mysqladmin -pr 
