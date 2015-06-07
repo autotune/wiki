@@ -47,3 +47,40 @@ do
 done
 
 }
+
+add_ips() {
+
+# add IPs to an array
+# add subinterface number to eth0 based on number of IPs and existing subinterfaces
+# then add output to network-scripts
+
+IPS=()
+IPS=($(cat ips.txt))
+COUNT=34
+
+for IPADDR in "${IPS[@]}" ;
+do
+    COUNT="$(expr $COUNT + 1)"
+    printf "
+DEVICE=eth0:$COUNT
+IPADDR=$IPADDR
+NETMASK=255.255.255.255
+ONBOOT=yes\n" > "./ifaces/ifcfg-eth0:$COUNT"
+
+done
+
+}
+
+activate_ips {
+
+IPS=()
+IPS=($(cat ips.txt))
+COUNT=34
+
+for IPADDR in "${IPS[@]}" ;
+do
+    COUNT="$(expr $COUNT + 1)"
+    printf "$(/sbin/ifup eth0:$COUNT)\n"
+done
+
+}
