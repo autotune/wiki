@@ -44,6 +44,7 @@ export ANSCFG="https://github.com/autotune/wiki/blob/master/linux/rhcs/rhcs-play
 
   - 4.2 10.37.129.2 => vnic1. This is used to connect from guest to host and act as power fencing device.
 
+  - 4.3 Ensure public keys from guests are on VirtualBox host server (ssh-copy-id)
 
 ### VIRTUAL MACHINE 
 

@@ -14,4 +14,3 @@
 
     :set formatoptions-=cro
 
-
