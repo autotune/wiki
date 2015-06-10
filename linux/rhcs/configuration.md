@@ -91,7 +91,7 @@ mkqdisk -c /dev/sdc1 -l clusterdisk
 
 5.1) Create 2 64 bit journals on GFS 
 
-mkfs.gfs2 -t sqlstgclu:datagfs -j 2 -J 64
+mkfs.gfs2 -t mystgclu:datagfs2 -j 2 -J 64 /dev/vg_sqlstgclu-cluster_data/lv_data
 
 6.0) Start cluster services
 
@@ -130,5 +130,20 @@ ccs -h sqlstgclu2 --sync --activate
 
     ccs -h localhost --addservice web-resources domain=web recovery=relocate
 
+7.4) Add VIP IP to new web-resources subservice
 
+    ccs -h localhost --addsubservice web-resources ip ref=192.168.3.1
+
+7.5) Add filesystems as dependencies for VIP
+
+    ccs -h localhost --addsubservice web-resources ip:clusterfs ref=docrootgfs2
+    
+    ccs -h localhost --addsubservice web-resources ip:clusterfs[0]:clusterfs ref=datagfs2
  
+8.0) Install apache and mysql
+
+    yum install mysql-server -y && yum install httpd -y
+
+    chkconfig mysqld on && chkconfig httpd on
+
+
