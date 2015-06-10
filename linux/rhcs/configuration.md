@@ -95,13 +95,40 @@ mkfs.gfs2 -t sqlstgclu:datagfs -j 2 -J 64
 
 6.0) Start cluster services
 
-1) start cluster logical volume manager
+1) Start cluster manager
+
+service cman start 
+
+2) start cluster logical volume manager
 
 service clvmd start => x2 
 
 chkconfig clvmd on 
 
-2) start cluster manager (logical volumes will fail to mount unless started)
+3) start cluster manager (logical volumes will fail to mount unless started)
 
-service rgmanager start
+service rgmanager start 
 
+4) start ricci
+
+service ricci start => x2
+
+ccs -h sqlstgclu2 --sync --activate
+
+7.0) Configure storage resource 
+
+7.1) List storage resource available
+
+    mkqdisk -L|grep -i label
+    Label:                clusterdisk
+
+7.2) Create web failover domain
+
+    ccs -h localhost --addfailoverdomain name=web
+
+7.3) Create web resources service group
+
+    ccs -h localhost --addservice web-resources domain=web recovery=relocate
+
+
+ 
