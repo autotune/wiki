@@ -30,7 +30,7 @@ fencing script => http://meinit.nl/virtualbox-fencing-and-red-hat-enterprise-lin
 
 #### PHSYICAL PARTITIONS
 
-[root@sqlstgclu1 /]# fdisk -l|grep Linux
+root@sqlstgclu1 /]# fdisk -l|grep Linux
 
 /dev/sda1   *           1          66      524288   83  Linux => boot
 
@@ -88,6 +88,10 @@ lvchange -an vg_sqlstgclu-cluster_data
 mkqdisk -c /dev/sdc1 -l clusterdisk
 
 5.0) Create GFS filesystem 
+
+mkfs.gfs2 -t mystgclu:lvdocroot -j 2 -J 64 /dev/vg_sqlstgclu-cluster_docroot/lv_docroot
+
+mkfs.gfs2 -t mystgclu:data -j 2 -J 64 /dev/vg_sqlstgclu-cluster_data/lv_data
 
 5.1) Create 2 64 bit journals on GFS 
 
