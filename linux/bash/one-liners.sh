@@ -71,7 +71,7 @@ done
 
 }
 
-activate_ips {
+activate_ips() {
 
 IPS=()
 IPS=($(cat ips.txt))
@@ -84,3 +84,20 @@ do
 done
 
 }
+
+# refactor
+# whois_lookup() {
+# DOMAIN=example.com
+# whois $(ping -c 1 $DOMAIN|head -n1|awk '{print $3}'|tr '()' ' '|awk '{print $1}'|grep OrgName) 
+
+}# 
+
+sar_mem() {
+
+# show titles of columns 
+sar -r|head -n3|tail -n1 && sar -r|tail -n5
+
+}
+
+
+
