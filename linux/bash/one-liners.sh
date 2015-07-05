@@ -1,7 +1,7 @@
 #!/bin/bash
 largest_dirs(){ 
     # specify folders and subfolders to search
-    FS='/var';\
+    FS='/';\
     # resize the window and clear, run date
     resize;clear;date;\
     # get total disk size 
