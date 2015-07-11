@@ -1,0 +1,8 @@
+http://wiki.dreamhost.com/Web_Server_Performance_Comparison[1]  
+http://serverfault.com/questions/279262/nginx-proxy-a-large-port-range-to-equivalent-port-on-a-different-ip-address[2]
+http://www.haproxy.org/download/1.3/doc/configuration.txt [3]
+http://blog.haproxy.com/2013/04/22/client-ip-persistence-or-source-ip-hash-load-balancing/ [4]
+http://www.somerorbay.com/vps-and-dedicated/nginx-behind-haproxy-x-forwarded-for-getting-real-client-ip [5]
+http://ubuntuforums.org/showthread.php?t=772508 [6]
+https://help.ubuntu.com/lts/serverguide/nagios.html [7]
+http://sharadchhetri.com/2013/06/11/how-to-install-and-configure-nagios-nrpe-client-in-ubuntu-with-apt-get-command/ [8]
