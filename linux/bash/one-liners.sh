@@ -99,5 +99,9 @@ sar -r|head -n3|tail -n1 && sar -r|tail -n5
 
 }
 
+remove_host() {
 
+ssh-keygen -f "/root/.ssh/known_hosts" -R monit-nagios-a
+
+}
 
