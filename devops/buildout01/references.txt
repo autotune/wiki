@@ -6,3 +6,4 @@ http://www.somerorbay.com/vps-and-dedicated/nginx-behind-haproxy-x-forwarded-for
 http://ubuntuforums.org/showthread.php?t=772508 [6]
 https://help.ubuntu.com/lts/serverguide/nagios.html [7]
 http://sharadchhetri.com/2013/06/11/how-to-install-and-configure-nagios-nrpe-client-in-ubuntu-with-apt-get-command/ [8]
+http://stackoverflow.com/questions/84882/sudo-echo-something-etc-privilegedfile-doesnt-work-is-there-an-alterna [9]
