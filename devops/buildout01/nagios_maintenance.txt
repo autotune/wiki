@@ -36,7 +36,13 @@ nagios_maintenance.txt
             4.2.4 => sudo wget -q $nagios3url/lb-haproxy-a.cfg -O /etc/nagios3/conf.d/web-nginx-b.cfg --no-check-certificate
             4.2.5 => sudo wget -q $nagios3url/monit-nagios-a.cfg -O /etc/nagios3/conf.d/monit-nagios-a.cfg --no-check-certificate
             
-            
+
+ADDITIONAL NOTES
+================
+
+Checks Implemented: ssh, disk space, load average,
+
+
 LAST MINUTE UPGRADE
 ===================
 
@@ -242,7 +248,44 @@ Continue [yN]  Details [d]y
            │                             install the package maintainer's version
            
            
-        
-ADDITIONAL NOTES
+           
+30 packages are going to be removed.
 
-Checks Implemented: ssh, disk space, load average,
+ Continue [yN]  Details [d]d
+
+Remove: dhcp3-client dhcp3-common fuse-utils libapt-inst1.4 libdb4.8
+  libgmp3c2 libtasn1-3 libudev0 python-central
+
+Remove (was auto installed) cpp-4.6 gcc-4.6-base libbind9-80
+  libboost-iostreams1.46.1 libclass-isa-perl libdb5.1 libdns81
+  libdrm-nouveau1a libisc83 libisccc80 libisccfg82 liblwres80
+  libmath-round-perl libmpc2 libpackage-deprecationmanager-perl
+  libswitch-perl libsysfs2 linux-headers-3.2.0-87
+  linux-headers-3.2.0-87-virtual python-gnupginterface
+  python-paramiko
+
+...skipping...
+
+Remove: dhcp3-client dhcp3-common fuse-utils libapt-inst1.4 libdb4.8
+  libgmp3c2 libtasn1-3 libudev0 python-central
+
+Remove (was auto installed) cpp-4.6 gcc-4.6-base libbind9-80
+  libboost-iostreams1.46.1 libclass-isa-perl libdb5.1 libdns81
+  libdrm-nouveau1a libisc83 libisccc80 libisccfg82 liblwres80
+  libmath-round-perl libmpc2 libpackage-deprecationmanager-perl
+  libswitch-perl libsysfs2 linux-headers-3.2.0-87
+  linux-headers-3.2.0-87-virtual python-gnupginterface
+  python-paramiko
+
+
+Continue [yN]  Details [d]y
+
+# FINISHED!
+
+ubuntu@monit-nagios-a:~$ lsb_release -a
+No LSB modules are available.
+Distributor ID:	Ubuntu
+Description:	Ubuntu 14.04.2 LTS
+Release:	14.04
+Codename:	trusty
+
