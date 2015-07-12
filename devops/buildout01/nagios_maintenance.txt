@@ -12,7 +12,7 @@ nagios_maintenance.txt
           4.1.5 =>  # replace old hostname with new hostname in /etc/hosts with sed
             4.1.5.1 => sudo sh -c "sed \"s/\"$(sudo cat /root/challenges/hostname.bac)\"/\"$(hostname)\"/g\" -i /etc/hosts"
           4.1.6 =>  ssh-keygen -b 2048 -t rsa -f /home/ubuntu/.ssh/id_rsa -q -N ""
-          4.1.7 =>  sudo sh -c "echo "lbhaproxya" > /etc/hostname"
+          4.1.7 =>  sudo sh -c "echo "$monitnagiosa" > /etc/hostname"
           4.1.8 =>  sudo sh -c "echo "$webnginxa web-nginx-a" >> /etc/hosts"
           4.1.9 =>  sudo sh -c "echo "$webnginxb web-nginx-b" >> /etc/hosts"
           4.1.90 => sudo sh -c "echo "$lbhaproxya  internal.zombo.com"  >> /etc/hosts"
