@@ -10,7 +10,7 @@ nagios_maintenance.txt
           4.1.3 =>  sudo hostname "monit-nagios-a"
           4.1.4 =>  sudo sh -c "echo \"monit-nagios-a\" > /etc/hostname"
           4.1.5 =>  # replace old hostname with new hostname in /etc/hosts with sed
-            4.1.5.1 => sudo sh -c "sed "s/"$(cat /root/challenges/hostname.bac)"/"$(hostname)"/g" -i /etc/hosts"
+            4.1.5.1 => sudo sh -c "sed \"s/\"$(sudo cat /root/challenges/hostname.bac)\"/\"$(hostname)\"/g\" -i /etc/hosts"
           4.1.6 =>  ssh-keygen -b 2048 -t rsa -f /home/ubuntu/.ssh/id_rsa -q -N ""
           4.1.7 =>  sudo sh -c "echo "lbhaproxya" > /etc/hostname"
           4.1.8 =>  sudo sh -c "echo "$webnginxa web-nginx-a" >> /etc/hosts"
