@@ -25,23 +25,23 @@ haproxy_maintenance.txt
           3.1.97 => sudo sh -c "sed -i \"/User privilege spec/a $sudoer  ALL=(ALL)       ALL\" /etc/sudoers /etc/sudoers" # appends after root user.
           3.1.98 => echo "$publickey"  >> /home/$sudoer/authorized_keys
     ### ENABLE UFW
-          3.1.99 => ufw enable
-          3.1.990 => ufw allow in on eth0 to any port 80
-          3.1.991 => ufw allow proto tcp from any to any port 60000:65000 # [6]
+          3.1.99 => sudo ufw enable
+          3.1.990 => sudo ufw allow in on eth0 to any port 80
+          3.1.991 => sudo ufw allow proto tcp from any to any port 60000:65000 # [6]
     ### HAPROXY
         3.2.0 => configure haproxy and forward ports 60000 to 65000 to port 80
-          3.2.1 => apt-get install haproxy -y # force install haproxy
-          3.2.2 => sed 's/ENABLED=0/ENABLED=1/g' -i /etc/default/haproxy # needs to be enabled for init. https://i.imgur.com/IppKJ.jpg
-          3.2.3 => wget -P /etc/haproxy/ $haproxycfg [3][4]
-          3.2.4 => service haproxy start
-          3.2.5 => update-rc.d haproxy enable 
+          3.2.1 => sudo apt-get install haproxy -y # force install haproxy
+          3.2.2 => sudo sh -c "sed 's/ENABLED=0/ENABLED=1/g' -i /etc/default/haproxy" # needs to be enabled for init. https://i.imgur.com/IppKJ.jpg
+          3.2.3 => sudo wget -P /etc/haproxy/ $haproxycfg [3][4]
+          3.2.4 => sudo service haproxy start
+          3.2.5 => sudo update-rc.d haproxy enable 
          
     ### NAGIOS PLUGIN
         3.3.0 => configure nagios plugin server
-            3.3.1 => apt-get install nagios3 nagios-nrpe-plugin -y
-            3.3.2 => wget -q $nrpeurl -O /etc/nagios/nrpe.cfg
-            3.3.3 => service nagios-nrpe-server restart
-            3.3.4 => update-rc.d nagios-nrpe-server enable
+            3.3.1 => sudo apt-get install nagios3 nagios-nrpe-plugin -y
+            3.3.2 => sudo wget -q $nrpeurl -O /etc/nagios/nrpe.cfg
+            3.3.3 => sudo service nagios-nrpe-server restart
+            3.3.4 => sudo update-rc.d nagios-nrpe-server enable
 
 
 
