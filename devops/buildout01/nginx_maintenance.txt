@@ -53,7 +53,7 @@ nginx_maintenance.txt
         2.1.5 =>  # replace old hostname with new hostname in /etc/hosts with sed
           2.1.5.1 => sudo sed "s/"$(cat /root/challenges/hostname.bac)"/"$(hostname)"/g" -i /etc/hosts
         2.1.6 =>  sudo echo "web-nginx-b" > /etc/hostname
-        2.1.7 =>  sudo echo "$webnginxa  web-nginx-a" >> /etc/hosts
+        2.1.7 =>  sudo echo "$webnginxa  web-nginx-a" >> /etc/hosts # sudo -s here if needed
         2.1.7 =>  sudo echo "$lbhaproxya  lb-haproxy-a internal.zombo.com"  >> /etc/hosts
         2.1.8 =>  sudo echo "$monitnagiosa monit-nagios-a" >> /etc/hosts
         2.1.9 =>  sudo ssh-keygen -b 2048 -t rsa -f /root/.ssh/id_rsa -q -N ""
