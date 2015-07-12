@@ -38,7 +38,7 @@ nginx_maintenance.txt
           1.3.4 => echo "a" > /var/www/nginx-default/index.html
     ### NAGIOS PLUGIN SERVER 
          1.3.0 => install nginx plugin server to communicate with nagios
-            1.3.1 =>  sudo apt-get install nagios-nrpe-plugin -y  # ostfix: local config. #host: web-nagios-a [8]
+            1.3.1 =>  sudo apt-get install nagios-nrpe-server -y  # ostfix: local config. #host: web-nagios-a [8]
             1.3.2 =>  wget -q $nrpeurl -O /etc/nagios/nrpe.cfg
             1.3.3 =>  sudo service nagios-nrpe-server restart 
             1.3.4 =>  sudo update-rc.d nagios-nrpe-server enable
