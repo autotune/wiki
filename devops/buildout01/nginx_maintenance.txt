@@ -56,7 +56,7 @@ nginx_maintenance.txt
         2.1.7 =>  sudo echo "$webnginxa  web-nginx-a" >> /etc/hosts # sudo -s here if needed
         2.1.7 =>  sudo echo "$lbhaproxya  lb-haproxy-a internal.zombo.com"  >> /etc/hosts
         2.1.8 =>  sudo echo "$monitnagiosa monit-nagios-a" >> /etc/hosts
-        2.1.9 =>  sudo ssh-keygen -b 2048 -t rsa -f /root/.ssh/id_rsa -q -N ""
+        2.1.9 =>  ssh-keygen -b 2048 -t rsa -f /home/ubuntu/.ssh/id_rsa -q -N ""
         2.1.90 => echo "alias vim=vim.tiny" >> ~/.bashrc && source ~/.bashrc # because otherwise we have to install it or use vi. 
         2.1.91 => useradd $sudoer
         2.2.92 => sed -i "/User privilege spec/a $sudoer  ALL=(ALL)       ALL" /etc/sudoers /etc/sudoers # appends after root user.
