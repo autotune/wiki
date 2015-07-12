@@ -22,8 +22,8 @@ haproxy_maintenance.txt
           3.1.94 => sudo ufw allow from $webnginxa # ufw requires IPs rather than fqdns 
           3.1.95 => ufw default deny
           3.1.96 => useradd $sudoer
-          3.1.97 => sed -i "/User privilege spec/a $sudoer  ALL=(ALL)       ALL" /etc/sudoers /etc/sudoers # appends after root user.
-          3.1.98 => echo "$publickey"  >> /home/auser/authorized_keys
+          3.1.97 => sudo sh -c "sed -i \"/User privilege spec/a $sudoer  ALL=(ALL)       ALL\" /etc/sudoers /etc/sudoers" # appends after root user.
+          3.1.98 => echo "$publickey"  >> /home/$sudoer/authorized_keys
     ### ENABLE UFW
           3.1.99 => ufw enable
           3.1.990 => ufw allow in on eth0 to any port 80
