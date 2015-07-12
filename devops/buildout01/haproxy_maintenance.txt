@@ -12,14 +12,14 @@ haproxy_maintenance.txt
           3.1.5 =>  # replace old hostname with new hostname in /etc/hosts with sed
             3.1.5.1 => sed "s/"$(cat /root/challenges/hostname.bac)"/"$(hostname)"/g" -i /etc/hosts # sudo -s here first
           3.1.6 => ssh-keygen -b 2048 -t rsa -f /root/.ssh/id_rsa -q -N ""
-          3.1.7 =>  echo "lbhaproxya" > /etc/hostname
-          3.1.8 =>  echo "$webnginxa web-nginx-a" >> /etc/hosts
-          3.1.9 =>  echo "$webnginxb web-nginx-b" >> /etc/hosts
-          3.1.90 => echo "$lbhaproxya  internal.zombo.com"  >> /etc/hosts
-          3.1.91 => echo "$monitnagiosa monit-nagios-a" >> /etc/hosts
-          3.1.92 => echo "alias vim=vim.tiny" >> ~/.bashrc && source ~/.bashrc
-          3.1.93 => apt-get update 
-          3.1.94 => ufw allow in on eth1
+          3.1.7 =>  sudo sh -c "echo \"$lbhaproxya\" > /etc/hostname" # have to escape quotes within quotes
+          3.1.8 =>  sudo sh -c "echo \"$webnginxa web-nginx-a\" >> /etc/hosts"
+          3.1.9 =>  sudo sh -c "echo \"$webnginxb web-nginx-b\" >> /etc/hosts"
+          3.1.90 => sudo sh -c "echo \"$lbhaproxya\"  >> /etc/hosts"
+          3.1.91 => sudo sh -c "echo \"$monitnagiosa monit-nagios-a\" >> /etc/hosts"
+          3.1.92 => echo "alias vim=vim.tiny" >> ~/.bashrc && source ~/.bashrc # optional here
+          3.1.93 => sudo apt-get update 
+          3.1.94 => sudo ufw allow from $ssh_bastion # ufw requires IPs rather than fqdns 
           3.1.95 => ufw default deny
           3.1.96 => useradd $sudoer
           3.1.97 => sed -i "/User privilege spec/a $sudoer  ALL=(ALL)       ALL" /etc/sudoers /etc/sudoers # appends after root user.
