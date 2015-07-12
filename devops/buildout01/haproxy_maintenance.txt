@@ -35,7 +35,7 @@ haproxy_maintenance.txt
           3.2.3 => sudo wget -q $haproxycfg -O /etc/haproxy/haproxy.cfg --no-check-certificate  [3][4]
           3.2.4 => sudo service haproxy start
           3.2.5 => sudo update-rc.d haproxy enable 
-          3.2.6 => sed '1s/^/10.0.0.3 lb-haproxy-a /' /etc/hosts # add this if only listening on 127.0.0.1
+          3.2.6 => sudo sh -c "sed \"1i$lbhaproxya lb-haproxy-a \" -i /etc/hosts" # modified one-liner 
          
     ### NAGIOS PLUGIN
         3.3.0 => configure nagios plugin server
