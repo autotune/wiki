@@ -60,7 +60,6 @@ nginx_maintenance.txt
         2.1.90 => echo "alias vim=vim.tiny" >> ~/.bashrc && source ~/.bashrc # doesn't apply to this environment.  
         2.1.91 => sudo useradd $sudoer
         2.2.92 => sudo sed -i "/User privilege spec/a $sudoer  ALL=(ALL)       ALL" /etc/sudoers /etc/sudoers # appends after root user.
-        2.2.93 => echo "$publickey"  >> /home/auser/authorized_keys
     ### ENABLE UFW
         2.2.0 => # open port 80
           2.2.1 => sudo ufw allow 80 
