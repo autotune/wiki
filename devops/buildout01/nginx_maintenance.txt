@@ -85,5 +85,5 @@ nginx_maintenance.txt
 
 GOTCHAS
 =======
-Figuring out x-forwarded-for and port forwarding proved rather time-consuming for haproxy and ensuring proper logging in nginx. 
+Figuring out x-forwarded-for and port forwarding proved rather time-consuming for haproxy and ensuring propper logging in nginx. 
 
