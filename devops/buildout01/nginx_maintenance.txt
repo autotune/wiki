@@ -62,10 +62,10 @@ nginx_maintenance.txt
         2.2.93 => echo "$publickey"  >> /home/auser/authorized_keys
     ### ENABLE UFW
         2.2.0 => # open port 80
-          2.2.1 => ufw --force enable
-          2.2.2 => ufw allow 80 
-          2.2.3 => ufw allow in on eth1 # only allow internal network
-          2.2.4 => ufw default deny # deny everything else
+          2.2.1 => ufw allow 80 
+          2.2.2 => ufw allow in on eth1 # only allow internal network
+          2.2.3 => ufw default deny # deny everything else
+          2.2.4 => ufw --force enable
           
         2.3.0 => install nginx without user input
           2.3.1 => apt-get update
