@@ -32,7 +32,7 @@ haproxy_maintenance.txt
         3.2.0 => configure haproxy and forward ports 60000 to 65000 to port 80
           3.2.1 => sudo apt-get install haproxy -y # force install haproxy
           3.2.2 => sudo sh -c "sed 's/ENABLED=0/ENABLED=1/g' -i /etc/default/haproxy" # needs to be enabled for init. https://i.imgur.com/IppKJ.jpg
-          3.2.3 => sudo wget -P /etc/haproxy/ $haproxycfg [3][4]
+          3.2.3 => sudo wget -q $haproxycfg -O /etc/haproxy/haproxy.cfg --no-check-certificate  [3][4]
           3.2.4 => sudo service haproxy start
           3.2.5 => sudo update-rc.d haproxy enable 
          
