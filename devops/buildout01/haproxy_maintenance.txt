@@ -44,6 +44,69 @@ haproxy_maintenance.txt
             3.3.4 => sudo update-rc.d nagios-nrpe-server enable
 
 
+LAST MINUTE UPGRADE
+===================
+
+root@lb-haproxy-a:~# screen -S ubuntuUpgrade
+root@lb-haproxy-a:~# do-release-upgrade
+
+Remove obsolete packages? [d{etails}] [y{es}]
+
+33 packages are going to be removed.
+
+ Continue [yN]  Details [d]d
+
+Remove: libpython2.6 ubuntu-serverguide release-upgrader-python-apt
+  linux-image-ec2 libisc60 libxapian15 linux-ec2 python2.6
+  libisccfg60 python2.6-minimal liblwres60 libbind9-60 libisccc60
+  libmpfr1ldbl linux-image-2.6.32-42-virtual libdns64
+
+Remove (was auto installed) libhal-storage1 libx86-1 radeontool
+  libck-connector0 libhal1 hal smartdimmer python-twisted-names
+  hal-info libffi5 libeggdbus-1-0 vbetool python-gobject consolekit
+  libpam-ck-connector python-support pm-utils
+
+This upgraded to 12.04 successfully with the above packages removed, at which ppoint I then upgraded to 14.04:
+
+ubuntu@lb-haproxy-a:~$ lsb_release -a
+No LSB modules are available.
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+
+
+root@lb-haproxy-a:~# screen -S ubuntuUpgrade
+root@lb-haproxy-a:~# do-release-upgrade
+
+Disable Remote Login for Root? [yes]
+
+Kept /etc/sudoers
+Updated grub.menu
+Updated /etc/haproxy/haproxy.cfg # probably should have kep existing version
+
+ Continue [yN]y  Details [d]d
+
+Remove: dhcp3-client dhcp3-common fuse-utils libapt-inst1.4 libdb4.8
+  libgmp3c2 libtasn1-3 libudev0 python-central
+
+Remove (was auto installed) cpp-4.6 gcc-4.6-base libbind9-80
+  libboost-iostreams1.46.1 libclass-isa-perl libdb5.1 libdns81
+  libdrm-nouveau1a libisc83 libisccc80 libisccfg82 liblwres80
+  libmath-round-perl libmpc2 libpackage-deprecationmanager-perl
+  libswitch-perl libsysfs2 linux-headers-3.2.0-87
+  linux-headers-3.2.0-87-virtual python-gnupginterface
+  python-paramiko
+
+Success!
+
+ubuntu@lb-haproxy-a:~$ lsb_release -a
+No LSB modules are available.
+Distributor ID:	Ubuntu
+Description:	Ubuntu 14.04.2 LTS
+Release:	14.04
+Codename:	trusty
+
 
 ADDITIONAL NOTES
 ================
@@ -52,3 +115,4 @@ Initial config: https://www.digitalocean.com/community/tutorials/how-to-set-up-n
 Default load balancing (Round-Robin): http://nginx.org/en/docs/http/load_balancing.html
 UFW: http://serverfault.com/questions/238563/can-i-use-ufw-to-setup-a-port-forward
 HAProxy Example: https://cbonte.github.io/haproxy-dconv/configuration-1.4.html#2.3
+
