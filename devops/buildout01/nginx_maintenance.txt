@@ -14,9 +14,9 @@ nginx_maintenance.txt
           1.1.7 =>  echo "$lbhaproxya  lb-haproxy-a internal.zombo.com"  >> /etc/hosts
           1.1.8 =>  echo "$monitnagiosa monit-nagios-a" >> /etc/hosts
           1.2.9 =>  ssh-keygen -b 2048 -t rsa -f /root/.ssh/id_rsa -q -N ""
-          1.2.90 => ssh-copy-id root@web-nginx-b
-          1.2.91 => ssh-copy-id root@lb-haproxy-a
-          1.2.92 => ssh-copy-id root@monit-nagios-a
+          1.2.90 => ssh-copy-id ubuntu@web-nginx-b # copy manually 
+          1.2.91 => ssh-copy-id ubuntu@lb-haproxy-a # copy manually 
+          1.2.92 => ssh-copy-id ubuntu@monit-nagios-a # copy manually 
           1.2.93 => echo "alias vim=vim.tiny" >> ~/.bashrc && source ~/.bashrc # because otherwise we have to install it or use vi. 
           1.2.94 => useradd $sudoer
           1.2.95 => sed -i "/User privilege spec/a $sudoer  ALL=(ALL)       ALL" /etc/sudoers /etc/sudoers # appends after root user.
