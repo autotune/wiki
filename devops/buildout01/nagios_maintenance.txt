@@ -40,6 +40,7 @@ nagios_maintenance.txt
             4.3.2 =>  sudo wget -q $nrpeurl -O /etc/nagios/nrpe.cfg --no-check-certificate 
             4.3.3 =>  sudo service nagios-nrpe-server restart
             4.3.4 =>  sudo update-rc.d nagios-nrpe-server enable
+            4.3.5 =>  sudo service nagios3 restart 
             
 
 ADDITIONAL NOTES
