@@ -76,7 +76,7 @@ nginx_maintenance.txt
           2.3.4 => sudo service nginx start
           2.3.5 => sudo sh -c "echo "b" > /var/www/nginx-default/index.html"
 
-         2.4.0 => install nginx plugin server to communicate with nagios
+         2.4.0 => install nagios plugin server to communicate with nagios
             2.4.1 =>  sudo apt-get install nagios-nrpe-server -y  #[8] 
             2.4.2 =>  sudo wget -q $nrpeurl -O /etc/nagios/nrpe.cfg --no-check-certificate 
             2.4.3 =>  sudo service nagios-nrpe-server restart
