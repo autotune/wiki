@@ -36,7 +36,7 @@ nginx_maintenance.txt
           1.3.2 => sudo apt-get install nginx -y 
           1.3.2 => sudo update-rc.d nginx defaults
           1.3.3 => sudo service nginx start
-          1.3.4 => echo "a" > /var/www/nginx-default/index.html
+          1.3.4 => sudo sh -c "echo "a" > /var/www/nginx-default/index.html" # [9]
     ### NAGIOS PLUGIN SERVER 
          1.3.0 => install nginx plugin server to communicate with nagios
             1.3.1 =>  sudo apt-get install nagios-nrpe-server -y  # ostfix: local config. #host: web-nagios-a [8]
@@ -73,7 +73,7 @@ nginx_maintenance.txt
           2.3.3 => sudo update-rc.d nginx defaults
           2.3.4 => sudo wget -q $nginxurl -O /etc/nginx/nginx.conf
           2.3.4 => sudo service nginx start
-          2.3.5 => sudo echo "b" > /var/www/nginx-default/index.html
+          2.3.5 => sudo sh -c "echo "b" > /var/www/nginx-default/index.html"
 
          2.4.0 => install nginx plugin server to communicate with nagios
             2.4.1 =>  sudo apt-get install nagios-nrpe-plugin -y  #[8] 
@@ -85,7 +85,4 @@ nginx_maintenance.txt
 GOTCHAS
 =======
 Figuring out x-forwarded-for and port forwarding proved rather time-consuming for haproxy and ensuring proper logging in nginx. 
-
-root@web-nginx-b:~# touch /var/log/nginx/internal.zombo.com-access.log
-root@web-nginx-b:~# chown www-data:adm /var/log/nginx/internal.zombo.com-access.log
 
