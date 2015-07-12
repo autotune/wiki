@@ -19,7 +19,7 @@ haproxy_maintenance.txt
           3.1.91 => sudo sh -c "echo \"$monitnagiosa monit-nagios-a\" >> /etc/hosts"
           3.1.92 => echo "alias vim=vim.tiny" >> ~/.bashrc && source ~/.bashrc # optional here
           3.1.93 => sudo apt-get update 
-          3.1.94 => sudo ufw allow from $ssh_bastion # ufw requires IPs rather than fqdns 
+          3.1.94 => sudo ufw allow from $webnginxa # ufw requires IPs rather than fqdns 
           3.1.95 => ufw default deny
           3.1.96 => useradd $sudoer
           3.1.97 => sed -i "/User privilege spec/a $sudoer  ALL=(ALL)       ALL" /etc/sudoers /etc/sudoers # appends after root user.
