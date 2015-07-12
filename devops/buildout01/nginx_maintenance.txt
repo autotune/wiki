@@ -19,7 +19,7 @@ nginx_maintenance.txt
           1.2.91 => ssh-copy-id ubuntu@lb-haproxy-a # copy manually 
           1.2.92 => ssh-copy-id ubuntu@monit-nagios-a # copy manually 
           1.2.93 => echo "alias vim=vim.tiny" >> ~/.bashrc && source ~/.bashrc # because otherwise we have to install it or use vi. 
-          1.2.94 => useradd $sudoer
+          1.2.94 => sudo useradd $sudoer
           1.2.95 => sudo sed -i "/User privilege spec/a $sudoer  ALL=(ALL)       ALL" /etc/sudoers /etc/sudoers # appends after root user.
           1.2.96 => echo "$publickey"  >> /home/auser/authorized_keys
 
