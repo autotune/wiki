@@ -29,9 +29,12 @@ nagios_maintenance.txt
 
     #### NAGIOS3 CONFIG [7]
         4.2.0 => # configure nagios3 to monitor web-nginx-a, web-nginx-b, and lb-nginx-a
-            4.2.1 => apt-get install nagios3 nagios-nrpe-plugin -y 
-            4.2.2 => update-rc.d nagios3 enable
-            4.2.3 => 
+            4.2.1 => sudo apt-get install nagios3 nagios-nrpe-plugin -y 
+            4.2.2 => sudo update-rc.d nagios3 enable
+            4.2.3 => sudo wget -q $nagios3url/web-nginx-a.cfg -O /etc/nagios3/conf.d/web-nginx-a.cfg --no-check-certificate
+            4.2.4 => sudo wget -q $nagios3url/web-nginx-b.cfg -O /etc/nagios3/conf.d/web-nginx-b.cfg --no-check-certificate
+            4.2.4 => sudo wget -q $nagios3url/lb-haproxy-a.cfg -O /etc/nagios3/conf.d/web-nginx-b.cfg --no-check-certificate
+            4.2.5 => sudo wget -q $nagios3url/monit-nagios-a.cfg -O /etc/nagios3/conf.d/monit-nagios-a.cfg --no-check-certificate
             
          
 ADDITIONAL NOTES
