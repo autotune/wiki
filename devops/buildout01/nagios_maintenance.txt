@@ -22,7 +22,7 @@ nagios_maintenance.txt
           4.1.94 => sudo sh -c "sed -i \"/User privilege spec/a $sudoer  ALL=(ALL)       ALL\" /etc/sudoers /etc/sudoers" # appends after root user.
           4.1.95 => echo "$publickey"  >> /home/auser/authorized_keys
     ### ENABLE UFW
-          4.1.96 => sudo ufw allow from 10.0.0.1 # allow from web-ngninx-a 
+          4.1.96 => sudo ufw allow from $webngninxa
           4.1.97 => sudo ufw default deny
           4.1.98 => sudo ufw enable
           4.1.99 => sudo ufw allow 80
