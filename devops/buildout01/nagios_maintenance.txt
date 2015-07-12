@@ -12,17 +12,17 @@ nagios_maintenance.txt
           4.1.5 =>  # replace old hostname with new hostname in /etc/hosts with sed
             4.1.5.1 => sudo sh -c "sed \"s/\"$(sudo cat /root/challenges/hostname.bac)\"/\"$(hostname)\"/g\" -i /etc/hosts"
           4.1.6 =>  ssh-keygen -b 2048 -t rsa -f /home/ubuntu/.ssh/id_rsa -q -N ""
-          4.1.7 =>  sudo sh -c "echo "$monitnagiosa" > /etc/hostname"
-          4.1.8 =>  sudo sh -c "echo "$webnginxa web-nginx-a" >> /etc/hosts"
-          4.1.9 =>  sudo sh -c "echo "$webnginxb web-nginx-b" >> /etc/hosts"
-          4.1.90 => sudo sh -c "echo "$lbhaproxya  internal.zombo.com"  >> /etc/hosts"
+          4.1.7 =>  sudo sh -c "echo \"$monitnagiosa\" > /etc/hostname"
+          4.1.8 =>  sudo sh -c "echo \"$webnginxa web-nginx-a\" >> /etc/hosts"
+          4.1.9 =>  sudo sh -c "echo \"$webnginxb web-nginx-b\" >> /etc/hosts"
+          4.1.90 => sudo sh -c "echo \"$lbhaproxya lb-haproxy-a\"  >> /etc/hosts"
           4.1.91 => echo "alias vim=vim.tiny" >> ~/.bashrc && source ~/.bashrc # optional for this buildout. 
           4.1.92 => sudo apt-get update 
           4.1.93 => sudo useradd $sudoer
-          4.1.94 => sudo sh -c "sed -i "/User privilege spec/a $sudoer  ALL=(ALL)"       ALL" /etc/sudoers /etc/sudoers # appends after root user.
+          4.1.94 => sudo sh -c "sed -i \"/User privilege spec/a $sudoer  ALL=(ALL)       ALL\" /etc/sudoers /etc/sudoers" # appends after root user.
           4.1.95 => echo "$publickey"  >> /home/auser/authorized_keys
     ### ENABLE UFW
-          4.1.96 => sudo ufw allow from 10.0.0.1 
+          4.1.96 => sudo ufw allow from 10.0.0.1 # allow from web-ngninx-a 
           4.1.97 => sudo ufw default deny
           4.1.98 => sudo ufw enable
           4.1.99 => sudo ufw allow 80
