@@ -46,11 +46,12 @@ nagios_maintenance.txt
             4.3.3 =>  sudo service nagios-nrpe-server restart
             4.3.4 =>  sudo update-rc.d nagios-nrpe-server enable
             
-    root@monit-nagios-a:/etc/nagios3/conf.d# grep HTTP hostgroups_nagios2.cfg -A2 #todo: add sed command and custom checks. 
+root@monit-nagios-a:/etc/nagios3/conf.d# grep HTTP hostgroups_nagios2.cfg -A2
 		alias           HTTP servers
-		members         localhost,web-nginx-a,web-nginx-a,lb-haproxy-a
+		members         localhost,web-nginx-a,web-nginx-b,lb-haproxy-a
         }
-
+        
+        
 ADDITIONAL NOTES
 ================
 
