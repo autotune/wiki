@@ -55,7 +55,7 @@ root@monit-nagios-a:/etc/nagios3/conf.d# grep HTTP hostgroups_nagios2.cfg -A2
 ADDITIONAL NOTES
 ================
 
-Checks Implemented: ssh, disk space, load average,
+Checks Implemented: disk space, load average, http. 
 
 
 LAST MINUTE UPGRADE
