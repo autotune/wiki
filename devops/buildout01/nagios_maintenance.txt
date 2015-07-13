@@ -1,4 +1,5 @@
 nagios_maintenance.txt
+quick note: I now realize I should have made this the ssh bastion to allow for SSH checks and full access. 
 
 4.0.0 => # add and configure a load balancer on the 3rd server to load balance between the webservers
     4.0.1 # round robin is simplest since we don't expect to scale and we won't be receiving traffic. 
