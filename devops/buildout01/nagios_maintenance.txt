@@ -35,12 +35,14 @@ nagios_maintenance.txt
             4.2.4 => sudo wget -q $nagios3url/web-nginx-b.cfg -O /etc/nagios3/conf.d/web-nginx-b.cfg --no-check-certificate
             4.2.4 => sudo wget -q $nagios3url/lb-haproxy-a.cfg -O /etc/nagios3/conf.d/lb-haproxy-a.cfg --no-check-certificate
             4.2.5 => sudo wget -q $nagios3url/monit-nagios-a.cfg -O /etc/nagios3/conf.d/monit-nagios-a.cfg --no-check-certificate
+            4.2.6 => sudo wget -q $nagios3url/nagios.cfg -O /etc/nagios3/nagios.cfg 
+            4.2.6 => sudo sh -c "service nagios3 restart" # standard sudo complains about file locations not being found. 
+            
         4.3.0 => install nagios plugin server to communicate with nagios
             4.3.1 =>  sudo apt-get install nagios-nrpe-server -y  #[8] 
             4.3.2 =>  sudo wget -q $nrpeurl -O /etc/nagios/nrpe.cfg --no-check-certificate 
             4.3.3 =>  sudo service nagios-nrpe-server restart
             4.3.4 =>  sudo update-rc.d nagios-nrpe-server enable
-            4.3.5 =>  sudo service nagios3 restart 
             
 
 ADDITIONAL NOTES
