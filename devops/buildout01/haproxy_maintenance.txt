@@ -40,7 +40,7 @@ haproxy_maintenance.txt
     ### NAGIOS PLUGIN
         3.3.0 => configure nagios plugin server
             3.3.1 => sudo apt-get install nagios-nrpe-server -y
-            3.3.2 => sudo wget -q $nrpeurl -O /etc/nagios/nrpe.cfg
+            3.3.2 => sudo wget -q $nrpeurl -O /etc/nagios/nrpe.cfg --no-check-certificate 
             3.3.3 => sudo service nagios-nrpe-server restart
             3.3.4 => sudo update-rc.d nagios-nrpe-server enable
 
