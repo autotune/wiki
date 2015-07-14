@@ -22,8 +22,8 @@ nginx_maintenance.txt
           1.2.94 => sudo useradd $sudoer
           1.2.95 =>sudo sh -c "sed -i \"/User privilege spec/a $sudoer  ALL=(ALL)       ALL\" /etc/sudoers /etc/sudoers" # appends after root user.
           1.2.96 => echo "$publickey"  >> /home/$sudoer/authorized_keys
-          1.2.97 => sudo sh -c "sed \"s/$webnginxb/10.197.0.2/\" -i /etc/hosts" # new ip for $webnginxb 
-          1.2.98 => sudo sh -c "sed \"s/$webnginxb/10.197.42.4/\" -i ~/.bashrc # new ip for $webnginxb
+          1.2.97 => sudo sh -c "sed \"s/10.0.0.2/10.0.05/\" -i /etc/hosts" # replace with new real ip for $webnginxb 
+          1.2.98 => sudo sh -c "sed \"s/10.0.0.2/10.0.0.5/\" -i ~/.bashrc # new real ip for $webnginxb
 
     ### ENABLE UFW
         1.2.0 => # open port 80
