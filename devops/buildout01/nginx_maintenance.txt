@@ -62,11 +62,11 @@ nginx_maintenance.txt
         2.1.90 =>  ssh-keygen -b 2048 -t rsa -f /home/ubuntu/.ssh/id_rsa -q -N ""
         2.1.91 => echo "alias vim=vim.tiny" >> ~/.bashrc && source ~/.bashrc # doesn't apply to this environment.  
         2.1.92 => sudo useradd $sudoer
-        2.2.93 => sudo sed -i "/User privilege spec/a $sudoer  ALL=(ALL)       ALL" /etc/sudoers /etc/sudoers # appends after root user.
+        2.2.93 => sudo sed -i "/User privilege spec/a $sudoer  ALL=(ALL)       NOPASSWD:ALL" /etc/sudoers # appends after root user.
     ### ENABLE UFW
         2.2.0 => # open port 80
           2.2.1 => sudo ufw allow 80 
-          2.2.2 => sudo ufw allow in on eth1 # only allow internal network
+          2.2.2 => sudo ufw allow from $web-nginx-a # only allow internal network
           2.2.3 => sudo ufw default deny # deny everything else
           2.2.4 => sudo ufw --force enable
           
