@@ -57,8 +57,8 @@ nginx_maintenance.txt
           2.1.5.1 =>sudo sh -c "sed "s/\"$(sudo cat /root/challenges/hostname.bac)\"/\"$(hostname)\"/g" -i /etc/hosts"
         2.1.6 =>  sudo sh -c "echo "web-nginx-b" > /etc/hostname"
         2.1.7 =>  sudo sh -c "echo "$webnginxb web-nginx-b" >> /etc/hosts"
-        2.1.8 =>  sudo sh -c "$lbhaproxya  lb-haproxy-a"  >> /etc/hosts"
-        2.1.9 =>  sudo sh -c  "echo "$monitnagiosa monit-nagios-a" >> /etc/hosts"
+        2.1.8 =>  sudo sh -c "echo \"$lbhaproxya  lb-haproxy-a\"  >> /etc/hosts"
+        2.1.9 =>  sudo sh -c "echo \"$monitnagiosa monit-nagios-a\" >> /etc/hosts"
         2.1.90 =>  ssh-keygen -b 2048 -t rsa -f /home/ubuntu/.ssh/id_rsa -q -N ""
         2.1.91 => echo "alias vim=vim.tiny" >> ~/.bashrc && source ~/.bashrc # doesn't apply to this environment.  
         2.1.92 => sudo useradd $sudoer
