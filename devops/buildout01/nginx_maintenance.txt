@@ -487,10 +487,195 @@ Remove (was auto installed) libhal1 libck-connector0 vbetool hal
  Continue [yN]  Details [d]y
  
  
+12.04 => 14.04 
+==============
+ubuntu@web-nginx-a:~$ sudo do-release-upgrade
+
+Upgrade: accountsservice adduser apache2-mpm-prefork apache2-utils
+  apache2.2-bin apparmor apparmor-utils apport apport-symptoms apt
+  apt-transport-https apt-utils apt-xapian-index aptitude at
+  base-files base-passwd bash bash-completion bc bind9-host bsd-mailx
+  bsdmainutils bsdutils busybox-initramfs busybox-static byobu bzip2
+  ca-certificates cloud-init cloud-utils command-not-found
+  command-not-found-data console-setup coreutils cpio cpp cpp-4.4
+  cpp-4.6 cpu-checker crda cron cryptsetup cryptsetup-bin curl dash
+  dbus debconf debconf-i18n debianutils diffutils dmidecode dmsetup
+  dnsutils dosfstools dpkg e2fslibs e2fsprogs ecryptfs-utils ed eject
+  euca2ools fancontrol file findutils ftp fuse gawk gcc-4.4-base
+  gcc-4.6-base geoip-database gettext-base gir1.2-glib-2.0 gnupg
+  gnupg-curl gpgv grep groff-base grub-common grub-legacy-ec2 grub-pc
+  grub-pc-bin grub2-common gzip hdparm hostname ifupdown info
+  initramfs-tools initramfs-tools-bin initscripts insserv
+  install-info iproute iptables iputils-arping iputils-ping
+  iputils-tracepath irqbalance isc-dhcp-client isc-dhcp-common
+  iso-codes iw kbd keyboard-configuration keyutils klibc-utils
+  krb5-locales landscape-client landscape-common
+  language-selector-common less libaccountsservice0 libacl1
+  libapache2-mod-php5 libapparmor-perl libapparmor1 libapr1
+  libaprutil1 libaprutil1-dbd-sqlite3 libaprutil1-ldap libapt-pkg4.12
+  libasn1-8-heimdal libatm1 libattr1 libblkid1 libbsd0 libbz2-1.0
+  libc-bin libc6 libcap-ng0 libcap2 libclass-isa-perl
+  libclass-load-perl libcomerr2 libcryptsetup4 libcurl3
+  libcurl3-gnutls libcwidget3 libdata-optlist-perl
+  libdatetime-format-builder-perl libdatetime-format-iso8601-perl
+  libdatetime-format-strptime-perl libdatetime-locale-perl
+  libdatetime-perl libdatetime-timezone-perl libdb5.1 libdbus-1-3
+  libdbus-glib-1-2 libdevmapper1.02.1 libdrm-intel1 libdrm-radeon1
+  libdrm2 libecryptfs0 libedit2 libelf1 libencode-locale-perl
+  libept1.4.12 libevent-2.0-5 libexpat1 libffi6 libfile-listing-perl
+  libfreetype6 libfribidi0 libfuse2 libgc1c2 libgcc1 libgcrypt11
+  libgdbm3 libgeoip1 libgirepository-1.0-1 libglib2.0-0 libgmp10
+  libgnutls26 libgpg-error0 libgpm2 libgssapi-krb5-2
+  libgssapi3-heimdal libhcrypto4-heimdal libheimbase1-heimdal
+  libheimntlm0-heimdal libhtml-form-perl libhtml-format-perl
+  libhtml-parser-perl libhtml-tree-perl libhttp-daemon-perl
+  libhttp-date-perl libhttp-message-perl libhx509-5-heimdal libidn11
+  libio-socket-inet6-perl libio-socket-ssl-perl libio-string-perl
+  libiw30 libjpeg-turbo8 libjpeg8 libjs-jquery libk5crypto3
+  libkeyutils1 libklibc libkrb5-26-heimdal libkrb5-3 libkrb5support0
+  libldap-2.4-2 liblist-moreutils-perl liblocale-gettext-perl
+  liblockfile-bin liblockfile1 liblwp-mediatypes-perl
+  liblwp-protocol-https-perl liblzma5 libmagic1 libmailtools-perl
+  libmath-round-perl libmodule-runtime-perl libmount1 libmpfr4
+  libmysqlclient18 libncurses5 libncursesw5 libnet-http-perl
+  libnet-ssleay-perl libnewt0.52 libnfnetlink0 libnih-dbus1 libnih1
+  libnl-3-200 libnl-genl-3-200 libnl1 libnspr4 libnss3 libnss3-1d
+  
+  libp11-kit0 libpackage-deprecationmanager-perl
+  libpackage-stash-perl libpackage-stash-xs-perl libpam-modules
+  libpam-modules-bin libpam-runtime libpam0g libparams-classify-perl
+  libparams-util-perl libparams-validate-perl libparted0debian1
+  libpcap0.8 libpci3 libpciaccess0 libpcre3 libpcsclite1 libpipeline1
+  libplymouth2 libpng12-0 libpolkit-gobject-1-0 libpopt0 libpq5
+  libpython2.7 libradius1 libreadline6 libroken18-heimdal
+  librpc-xml-perl librtmp0 libsasl2-2 libsasl2-modules libselinux1
+  libsensors4 libsepol1 libsigc++-2.0-0c2a libsigsegv2 libslang2
+  libsnmp-base libsocket6-perl libsqlite3-0 libss2 libssl0.9.8
+  libssl1.0.0 libstdc++6 libsub-install-perl libsub-name-perl
+  libsysfs2 libtalloc2 libtdb1 libterm-readkey-perl
+  libtext-charwidth-perl libtext-iconv-perl libtimedate-perl
+  libtinfo5 libtry-tiny-perl liburi-perl libusb-0.1-4 libusb-1.0-0
+  libuuid1 libwbclient0 libwind0-heimdal libwrap0 libwww-perl
+  libx11-6 libx11-data libxapian22 libxau6 libxcb1 libxdmcp6 libxext6
+  libxml-libxml-perl libxml-namespacesupport-perl libxml-parser-perl
+  libxml-sax-perl libxml2 libxmuu1 libxslt1.1 libyaml-0-2
+  linux-firmware linux-headers-virtual linux-image-virtual
+  linux-virtual lm-sensors locales lockfile-progs login logrotate
+  lsb-base lsb-release lshw lsof ltrace make makedev man-db manpages
+  mawk memtest86+ mime-support mlocate module-init-tools mount
+  mountall msr-tools mtr-tiny multiarch-support mysql-common
+  nagios-images nagios-nrpe-plugin nagios-nrpe-server nagios-plugins
+  nagios-plugins-basic nagios-plugins-standard nagios3-cgi
+  nagios3-common nagios3-core nano ncurses-base ncurses-bin net-tools
+  netbase netcat-openbsd nginx nginx-common nginx-full ntfs-3g
+  ntpdate openssh-client openssh-server openssl os-prober parted
+  passwd patch pciutils perl perl-base perl-modules php5-cli
+  php5-common plymouth plymouth-theme-ubuntu-text popularity-contest
+  postfix powermgmt-base ppp pppconfig procps psmisc python
+  python-apport python-apt python-apt-common python-boto
+  python-chardet python-cheetah python-configobj python-crypto
+  python-dbus python-dbus-dev python-debian python-gdbm python-gi
+  python-gobject-2 python-httplib2 python-keyring python-launchpadlib
+  python-lazr.restfulclient python-lazr.uri python-m2crypto
+  python-minimal python-newt python-oauth python-openssl python-pam
+  python-paramiko python-pexpect python-pkg-resources
+  python-problem-report python-pycurl python-serial python-simplejson
+  python-software-properties python-twisted-bin python-twisted-core
+  python-twisted-web python-wadllib python-xapian python-yaml
+  python-zope.interface python2.7 python2.7-minimal readline-common
+  resolvconf rsync rsyslog samba-common samba-common-bin screen sed
+  sensible-utils sgml-base smbclient snmp ssh-import-id ssl-cert
+  strace sudo sysv-rc sysvinit-utils tar tasksel tasksel-data tcpd
+  tcpdump telnet time tmux tzdata ubuntu-keyring ubuntu-minimal
+  ubuntu-standard ucf udev ufw unattended-upgrades
+  update-manager-core update-notifier-common upstart ureadahead
+  usbutils util-linux uuid-runtime vim vim-common vim-runtime
+ 
+    vim-tiny w3m wget whiptail whois wireless-regdb wireless-tools
+  wpasupplicant xauth xkb-data xml-core xz-utils zlib1g
+
+Continue [yN]  Details [d]y
+
+ │ Disable SSH password authentication for root?                                                                                            │
+ │                                                                                                                                          │
+ │                                         <Yes>
+ 
+ 
+        ┌────────────────────────────────────────────────────────┤  ├────────────────────────────────────────────────────────┐
+            │ A new version of /boot/grub/menu.lst is available, but the version installed currently has been locally modified.  │
+            │                                                                                                                    │
+            │ What would you like to do about menu.lst?                                                                          │
+            │                                                                                                                    │
+            │                             install the package maintainer's version
+            
+            Configuration file '/etc/nagios/nrpe.cfg'
+ ==> Modified (by you or by a script) since installation.
+ ==> Package distributor has shipped an updated version.
+   What would you like to do about it ?  Your options are:
+    Y or I  : install the package maintainer's version
+    N or O  : keep your currently-installed version
+      D     : show the differences between the versions
+      Z     : start a shell to examine the situation
+ The default action is to keep your current version.
+*** nrpe.cfg (Y/I/N/O/D/Z) [default=N] ? n
+
+Configuration file '/etc/sudoers'
+ ==> Modified (by you or by a script) since installation.
+ ==> Package distributor has shipped an updated version.
+   What would you like to do about it ?  Your options are:
+    Y or I  : install the package maintainer's version
+    N or O  : keep your currently-installed version
+      D     : show the differences between the versions
+      Z     : start a shell to examine the situation
+ The default action is to keep your current version.
+*** sudoers (Y/I/N/O/D/Z) [default=N] ? n
+
+Remove obsolete packages?
 
 
-PRE-UPGRADE to 14.04:
+47 packages are going to be removed.
 
-1) switch all hosts to monit-nagios-a as ssh bastian (should have done this originally):
+ Continue [yN]  Details [d]d
 
+Remove: dhcp3-client dhcp3-common fuse-utils libtasn1-3 libudev0
 
+Remove (was auto installed) apache2 apache2-bin apache2-data
+  apache2-mpm-prefork apache2-utils apache2.2-bin cpp-4.6
+  gcc-4.6-base libapache2-mod-php5 libapr1 libaprutil1
+  libaprutil1-dbd-sqlite3 libaprutil1-ldap libbind9-80
+  libboost-iostreams1.46.1 libclass-isa-perl libdb5.1 libdns81
+  libdrm-nouveau1a libgd2-noxpm libisc83 libisccc80 libisccfg82
+  liblwres80 libmath-round-perl libmpc2
+  libpackage-deprecationmanager-perl libradius1 libswitch-perl
+  libsysfs2 linux-headers-3.2.0-87 linux-headers-3.2.0-87-virtual
+  nagios-images nagios3-cgi nagios3-common nagios3-core php5-cli
+  php5-common php5-json php5-readline python-gnupginterface
+  python-paramiko
+
+...skipping...
+
+Remove: dhcp3-client dhcp3-common fuse-utils libtasn1-3 libudev0
+
+Remove (was auto installed) apache2 apache2-bin apache2-data
+  apache2-mpm-prefork apache2-utils apache2.2-bin cpp-4.6
+  gcc-4.6-base libapache2-mod-php5 libapr1 libaprutil1
+  libaprutil1-dbd-sqlite3 libaprutil1-ldap libbind9-80
+  libboost-iostreams1.46.1 libclass-isa-perl libdb5.1 libdns81
+  libdrm-nouveau1a libgd2-noxpm libisc83 libisccc80 libisccfg82
+  liblwres80 libmath-round-perl libmpc2
+  libpackage-deprecationmanager-perl libradius1 libswitch-perl
+  libsysfs2 linux-headers-3.2.0-87 linux-headers-3.2.0-87-virtual
+  nagios-images nagios3-cgi nagios3-common nagios3-core php5-cli
+  php5-common php5-json php5-readline python-gnupginterface
+  python-paramiko
+  
+  Continue [yN]  Details [d]y
+  
+  ubuntu@web-nginx-a:~$ lsb_release -a
+No LSB modules are available.
+Distributor ID:	Ubuntu
+Description:	Ubuntu 14.04.2 LTS
+Release:	14.04
+Codename:	trusty
+
+FINISHED
