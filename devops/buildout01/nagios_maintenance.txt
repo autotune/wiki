@@ -51,7 +51,27 @@ root@monit-nagios-a:/etc/nagios3/conf.d# grep HTTP hostgroups_nagios2.cfg -A2
 		alias           HTTP servers
 		members         localhost,web-nginx-a,web-nginx-b,lb-haproxy-a,monit-nagios-a
         }
-        
+            ### CHANGE SSH BASTION TO monit-nagios-a SO WE CAN SSH WITH NAGIOS 
+        4.4.0 => allow from $monitnagiosa on all hosts
+                 
+                 ubuntu@monit-nagios-a:~$ sudo ufw allow 22
+                 ubuntu@web-nginx-a:~$ sudo ufw allow from $monitnagiosa
+                 ubuntu@web-nginx-b:~$ sudo ufw allow from $monitnagiosa
+                 ubuntu@lb-haproxy-a:~$ sudo ufw allow from $monitnagiosa
+                 
+                 monit-nagios-a:
+                 ssh-keygen -b 2048 -t rsa -f /home/ubuntu/.ssh/id_rsa -q -N ""
+                 # manually copy /home/ubuntu/.ssh/id_rsa.pub over to each server ~/.ssh/authorized_keys file
+                 
+                 # remove original rule to allow from web-nginx-a 
+                 ubuntu@monit-nagios-a:~$ sudo ufw delete allow from $webnginxa
+                 ubuntu@web-nginx-a:~$ sudo ufw delete allow 22
+                 Rule deleted
+                 ubuntu@web-nginx-b:~$ sudo ufw delete allow from $webnginxa
+                 ubuntu@lb-haproxy-a:~$ sudo ufw delete allow from $webnginxa
+                 
+                 
+                 
         
 ADDITIONAL NOTES
 ================
