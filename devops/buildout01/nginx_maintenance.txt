@@ -40,15 +40,18 @@ nginx_maintenance.txt
           1.3.3 => sudo wget -q $nginxurl -O /etc/nginx/nginx.conf --no-check-certificate
           1.3.4 => sudo service nginx start
           1.3.5 => sudo sh -c "echo "a" > /var/www/nginx-default/index.html" # [9]
+          
     ### NAGIOS PLUGIN SERVER 
          1.3.0 => install nginx plugin server to communicate with nagios
             1.3.1 =>  sudo apt-get install nagios-nrpe-server -y  # ostfix: local config. #host: web-nagios-a [8]
             1.3.2 =>  sudo wget -q $nrpeurl -O /etc/nagios/nrpe.cfg --no-check-certificate 
             1.3.3 =>  sudo service nagios-nrpe-server restart 
             1.3.4 =>  sudo update-rc.d nagios-nrpe-server enable
-
+        
+        
     2.0.0 => web-nginx-b
         2.1.0 =>  # change hostname to web-nginx-b (backup first)
+        
         2.1.1 =>  sudo mkdir /root/challenges
         2.1.2 =>  sudo cp /etc/hostname /root/challenges/hostname.bac
         2.1.3 =>  sudo hostname "web-nginx-b"
@@ -91,6 +94,10 @@ Figuring out x-forwarded-for and port forwarding proved rather time-consuming fo
 LAST MINUTE UPGRADE 
 ===================
 web-nginx-b required last minute upgrade after getting re-imaged due to ufw issues. Full notes below:
+upgraded web-nginx-a for consistancy. 
+
+WEB-NGINX-B
+===========
 
 10.04 => 12.04
 ==============
@@ -350,5 +357,140 @@ Description:	Ubuntu 14.04.2 LTS
 Release:	14.04
 Codename:	trusty
 
+WEB-NGINX-A
+===========
+
+10.04 => 12.04
+==============
+
+ubuntu@web-nginx-a:~$ sudo do-release-upgrade
+
+Upgrade: grub-legacy-ec2 dmsetup libpci3 diffutils libcap2
+  libparse-debianchangelog-perl python-cheetah nagios3
+  libapparmor-perl libdbus-glib-1-2 python-httplib2 python-newt
+  libdevmapper1.02.1 liblocale-gettext-perl libklibc
+  python-software-properties logrotate bsdmainutils gcc-4.4-base
+  libpcap0.8 python-launchpadlib libx86-1 screen readline-common
+  ubuntu-keyring libpolkit-gobject-1-0 bc python-zope.interface at
+  strace dosfstools ed xauth libapr1 libwbclient0 perl-base
+  python-oauth aptitude libpcre3 language-selector-common python-apt
+  libterm-readkey-perl nagios-plugins groff-base gettext-base
+  python-central libtimedate-perl bash libatm1 python-twisted-web
+  libgnutls26 perl-modules libxml-libxml-perl libapt-inst1.4
+  klibc-utils apport psmisc ubuntu-minimal libbsd0 libsigc++-2.0-0c2a
+  login libxmuu1 libcwidget3 libpam-ck-connector libtasn1-3
+  libfreetype6 python-serial e2fsprogs parted grub-pc
+  command-not-found libglib2.0-0 libexpat1 snmp apparmor-utils
+  locales libxau6 debconf-i18n libgmp3c2 cpp libgdbm3 nagios-images
+  netbase linux-image-virtual nginx libhal1 libcurl3 hal
+  libkrb5support0 iputils-arping python ifupdown openssh-client
+  nagios3-core bsdutils cpio libreadline6 sudo ftp pciutils
+  base-passwd kbd python-problem-report nagios-nrpe-server
+  apache2-utils cpu-checker libfuse2 pppconfig apt-utils tcpd tcpdump
+  mtr-tiny libsnmp-base vim-tiny friendly-recovery libhtml-tree-perl
+  update-manager-core insserv xkb-data vbetool libck-connector0 dash
+  linux-firmware python-pam samba-common libncursesw5 libelf1
+  coreutils libgcc1 libyaml-0-2 netcat-openbsd libmailtools-perl dbus
+  udev libxcb1 passwd time apt libdrm2 wireless-tools
+  command-not-found-data libhal-storage1 bzip2 libpcsclite1 iproute
+  sysvinit-utils openssh-server libkrb5-3 nano mlocate libldap-2.4-2
+  hdparm iputils-tracepath unattended-upgrades libstdc++6
+  uuid-runtime libxml-sax-perl vim-common nagios-plugins-basic
+  libc-bin libncurses5 update-notifier-common apt-transport-https
+  base-files libtext-charwidth-perl libpam0g libedit2 libtalloc2
+  libpopt0 ubuntu-standard byobu nagios-nrpe-plugin tasksel-data
+  libk5crypto3 console-setup libmagic1 libgpg-error0 landscape-common
+  gnupg libgd2-noxpm mawk consolekit libnl1 apparmor lockfile-progs
+  tzdata plymouth-theme-ubuntu-text gpgv python-m2crypto pppoeconf
+  vim-runtime busybox-static libnet-snmp-perl libssl0.9.8
+  ncurses-base grep libdb4.8 libx11-6 libsasl2-2 ntpdate libpq5
+  bsd-mailx python-support cloud-utils debconf man-db python-apport
+  python-pexpect install-info gnupg-curl python-yaml radeontool
+  openssl iputils-ping rsyslog cpp-4.4 busybox-initramfs mount
+  librpc-xml-perl libgc1c2 euca2ools libcurl3-gnutls libss2
+  popularity-contest ltrace patch lsb-base tar sgml-base fancontrol
+  libhtml-format-perl nagios3-cgi python-configobj ucf os-prober
+  nagios3-common wpasupplicant python-gnupginterface e2fslibs zlib1g
+  ufw tasksel libiw30 vim mime-support python-gobject libpng12-0
+  dhcp3-client libpam-runtime libjpeg62 libcap-ng0 libapparmor1
+  libgeoip1 libpciaccess0 python-twisted-names libudev0 libnewt0.52
+  
+    libplymouth2 libsepol1 bash-completion python-lazr.uri
+  sensible-utils libtext-iconv-perl usbutils smartdimmer
+  landscape-client libuuid1 python-gdbm python-smartpm radiusclient1
+  cron libxdmcp6 w3m libgcrypt11 lm-sensors ssl-cert makedev dpkg
+  apport-symptoms python-dbus findutils manpages liblockfile1 rsync
+  libpam-modules libdrm-intel1 libxml2 wget curl libkeyutils1
+  libapt-pkg4.12 gawk python-boto libgpm2 debianutils pm-utils file
+  net-tools libusb-0.1-4 ppp python-twisted-core sed adduser
+  libradius1 libnih-dbus1 initramfs-tools geoip-database
+  python-simplejson samba-common-bin libwww-perl fuse-utils
+  module-init-tools grub-common info ureadahead upstart sysv-rc
+  libgssapi-krb5-2 mountall python-pkg-resources libc6 libattr1
+  libjs-jquery gzip python-lazr.restfulclient libslang2 libxext6
+  libsasl2-modules libaprutil1 initscripts python-wadllib iptables
+  mysql-common initramfs-tools-bin eject ca-certificates ntfs-3g
+  lsb-release nagios-plugins-standard dhcp3-common dmidecode
+  libsqlite3-0 libnih1 make ncurses-bin plymouth hostname less
+  python-pycurl postfix python-twisted-bin irqbalance bind9-host
+  libblkid1 procps libidn11 libwrap0 libsensors4 python-minimal
+  libxml-sax-expat-perl lshw libacl1 libsnmp15 libcomerr2 libselinux1
+  smbclient linux-virtual whiptail iso-codes libxml-parser-perl
+  memtest86+ liburi-perl cloud-init libx11-data dnsutils
+  python-openssl libhtml-parser-perl libparted0debian1 libbz2-1.0
+  libdrm-radeon1 libdbus-1-3 util-linux perl libsub-name-perl
+  
+   Continue [yN]  Details [d]y
+   
+   Configuration file `/etc/nagios/nrpe.cfg'
+ ==> Modified (by you or by a script) since installation.
+ ==> Package distributor has shipped an updated version.
+   What would you like to do about it ?  Your options are:
+    Y or I  : install the package maintainer's version
+    N or O  : keep your currently-installed version
+      D     : show the differences between the versions
+      Z     : start a shell to examine the situation
+ The default action is to keep your current version.
+*** nrpe.cfg (Y/I/N/O/D/Z) [default=N] ? n # keeping for customized items. 
+
+Configuration file `/etc/sudoers'
+ ==> File on system created by you or by a script.
+ ==> File also in package provided by package maintainer.
+   What would you like to do about it ?  Your options are:
+    Y or I  : install the package maintainer's version
+    N or O  : keep your currently-installed version
+      D     : show the differences between the versions
+      Z     : start a shell to examine the situation
+ The default action is to keep your current version.
+*** sudoers (Y/I/N/O/D/Z) [default=N] ? n # keeping for expensify sudoer.
+
+ ┌──────────────────────────┤ Configuring grub-pc ├──────────────────────────┐
+ │ A new version of configuration file /etc/default/grub is available, but   │
+ │ the version installed currently has been locally modified.                │
+ │                                                                           │
+ │ What do you want to do about modified configuration file grub?            │
+ │                                                                           │
+ │        install the package maintainer's version
+ 
+ 21 packages are going to be removed.
+
+ Continue [yN]  Details [d]d
+
+Remove: linux-image-2.6.32-42-virtual
+
+Remove (was auto installed) libhal1 libck-connector0 vbetool hal
+  pm-utils python-gobject libx86-1 libpam-ck-connector radiusclient1
+  libffi5 libmysqlclient16 libhal-storage1 radeontool
+  python-twisted-names python-support hal-info smartdimmer consolekit
+  libeggdbus-1-0 libjpeg62
+  
+ Continue [yN]  Details [d]y
+ 
+ 
+
+
+PRE-UPGRADE to 14.04:
+
+1) switch all hosts to monit-nagios-a as ssh bastian (should have done this originally):
 
 
