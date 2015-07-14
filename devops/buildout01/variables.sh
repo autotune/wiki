@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# change me to correct IPs 
 webnginxa="10.0.0.1"
 webnginxb="10.0.0.2"
 lbhaproxya="10.0.0.3"
