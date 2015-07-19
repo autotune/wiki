@@ -1,0 +1,72 @@
+requirements.txt
+
+SERVERS
+=======
+
+
+(1): free tier (AWS) => CentOS 6.5 AMI from centos.org => chef-solo 
+Memory => 590 MB
+Disk => 8 GB 
+
+DISTRO
+======
+CentOS release 6.5 (Final)
+
+REPOS
+=====
+https://dl.iuscommunity.org/pub/ius/stable/CentOS/6/x86_64/ius-release-1.0-14.ius.centos6.noarch.rpm (mysql55-server)
+
+PACKAGES (yum install package-version)
+========
+
+wget-1.12
+git-1.7.1
+php-5.3.3
+php-mysql-5.3.3
+mysql-server-5.5.44 (ius) 
+composer => curl -sS https://getcomposer.org/installer | php
+vim-enhanced-7.2.411
+expect-5.44.1.15
+
+
+SERVICES
+========
+mysqld => service mysqld start => chkconfig on => expect secure_installation.expect
+httpd => service httpd start => chkconfig on
+
+PORTS
+======
+Allow: 80, 443, 22
+
+DOWNLOADS
+=========
+https://raw.githubusercontent.com/autotune/wiki/master/mysql/secure_installation.expect
+
+MYSQL55-SERVER
+==============
+
+mysql> GRANT ALL ON paypal_pizza_app.* TO '<%=username=>'@'localhost' IDENTIFIED BY "<%=password=>";
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> FLUSH PRIVILEGES;
+Query OK, 0 rows affected (0.00 sec)
+
+
+COMPOSER
+========
+
+curl -sS https://getcomposer.org/installer | php -- --install-dir=/var/www/html/myapp
+php composer.phar update
+
+REST-API-SAMPLE-APP-PHP INSTALL
+================================
+
+/var/www/html/myapp
+php composer.phar update
+
+ATTRIBUTES
+==========
+mysql => username
+mysql => password 
+app/bootstrap.php => username 
+app/bootstrap.php => password
