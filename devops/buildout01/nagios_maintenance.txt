@@ -1,5 +1,4 @@
 nagios_maintenance.txt
-quick note: I now realize I should have made this the ssh bastion to allow for SSH checks and full access. 
 
 4.0.0 => # add and configure a load balancer on the 3rd server to load balance between the webservers
     4.0.1 # round robin is simplest since we don't expect to scale and we won't be receiving traffic. 
@@ -19,7 +18,7 @@ quick note: I now realize I should have made this the ssh bastion to allow for S
           4.1.90 => sudo sh -c "echo \"$lbhaproxya lb-haproxy-a\"  >> /etc/hosts"
           4.1.91 => echo "alias vim=vim.tiny" >> ~/.bashrc && source ~/.bashrc # optional for this buildout. 
           4.1.92 => sudo apt-get update 
-          4.1.93 => sudo useradd $sudoer
+          4.1.93 => sudo useradd $sudoer && mkdir /home/$sudoer && chown $sudoer:$sudoer /home/sudoer # for ubuntu, we must also add the userdir. 
           4.1.94 => sudo sh -c "sed -i \"/User privilege spec/a $sudoer  ALL=(ALL)       ALL\" /etc/sudoers /etc/sudoers" # appends after root user.
           4.1.95 => echo "$publickey"  >> /home/auser/authorized_keys
     ### ENABLE UFW
