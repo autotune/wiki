@@ -1,7 +1,13 @@
-def factorial(n):
-  if n == 0:
-      return 1
-  else:
-    return n * factorial(n - 1) 
+#!/usr/bin/env python
+# illistrate a factorial example
 
-print factorial(5)
+def factorial(n):
+    print "Factorial has been called with n = " + str(n)
+    if n == 1:
+        return 1
+    else:
+        result = n * factorial(n-1)
+        print str(n) + ':' + str(result)
+        return result	
+   
+print(factorial(5))
