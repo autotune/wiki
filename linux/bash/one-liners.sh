@@ -105,3 +105,10 @@ ssh-keygen -f "/root/.ssh/known_hosts" -R monit-nagios-a
 
 }
 
+clear_history() {
+
+history -c
+
+}
+
+
