@@ -1,4 +1,23 @@
 #### PROCESS SCHEDULING 
+# https://doc.opensuse.org/documentation/html/openSUSE_121/opensuse-tuning/cha.tuning.taskscheduler.html
+# kernel schedules which tasks to run in order for many to be ran at same time. 
+# TERMS
+# Preemption => if runnable process, one must be running. More not all can be running all the time. Scheduler 
+# suspends and resumes processes as needed. 
+#
+# Timeslice => Timeline for a running process determined in advance. Ensures equality for processor time among processes.  
+#
+# Process classes => iobound (hardware peripherals). Ran in many times but in short bursts. 
+#
+# Processor-bound => take time to execute code. Rand until decided by the schedular. Do not block other processes so ran
+# for longer periods. 
+#
+# Interactive => wait for io. 
+# Batch => run in background as lower priority.  
+# Real-time => never be blocked, i.e. graphical editing tools.  
+
+# http://www.informit.com/articles/article.aspx?p=101760&seqNum=2
+# difference between video editor (real-time) and text editor (interactive). 
 
 # http://lwn.net/Articles/352863/
 # parent process runs first by default
@@ -12,15 +31,23 @@ kernel.sched_child_runs_first = 0
 # must switch on CONFIG_SCHED_DEBUG
 # tune schedular from low latency to high
 # max 1 second per http://lxr.free-electrons.com/source/kernel/sysctl.c#L264
-# 0.001 seconds below.
+# 0.001 seconds below in nanoseconds.
 # larger values decrease performance per http://superuser.com/questions/524358/increasing-value-of-sched-latency-ns-and-sched-min-granularity-ns
 kernel.sched_min_granularity_ns = 1000000
 
-
+# 15 through 88761 corresponding to nice values
 kernel.sched_latency_ns = 5000000
+
+# reduces wakeup time in advance
 kernel.sched_wakeup_granularity_ns = 1000000
+# http://permalink.gmane.org/gmane.linux.kernel/1365755
+# http://fxr.watson.org/fxr/ident?v=linux-2.6;im=bigexcerpts;i=sched_tunable_scaling
+# enable tunable scaling. 
 kernel.sched_tunable_scaling = 1
+# http://www.linuxforums.org/forum/kernel/169800-sched_features-tweaks.html
+# CFS implemented in 2.6.23
 kernel.sched_features = 3183
+# change if CPU idle time higher than expected. 
 kernel.sched_migration_cost = 500000
 kernel.sched_nr_migrate = 32
 kernel.sched_time_avg = 1000
