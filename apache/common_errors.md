@@ -6,3 +6,4 @@
 
    - implement caching through varnish 
 
+   - implement caching through nginx
