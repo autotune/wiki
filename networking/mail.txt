@@ -1,0 +1,31 @@
+$ dig mx google.com
+
+; <<>> DiG 9.8.3-P1 <<>> mx google.com
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 33935
+;; flags: qr rd ra; QUERY: 1, ANSWER: 5, AUTHORITY: 0, ADDITIONAL: 4
+
+;; QUESTION SECTION:
+;google.com.			IN	MX
+
+;; $DOMAIN $TTL $PRIORITY $CNAME
+
+;; ANSWER SECTION:
+google.com.		464	IN	MX	30 alt2.aspmx.l.google.com.
+google.com.		464	IN	MX	40 alt3.aspmx.l.google.com.
+google.com.		464	IN	MX	50 alt4.aspmx.l.google.com.
+google.com.		464	IN	MX	10 aspmx.l.google.com.
+google.com.		464	IN	MX	20 alt1.aspmx.l.google.com.
+
+;; ADDITIONAL SECTION:
+alt2.aspmx.l.google.com. 98	IN	A	74.125.141.26
+alt2.aspmx.l.google.com. 17	IN	AAAA	2800:3f0:4003:c00::1b
+aspmx.l.google.com.	91	IN	A	173.194.64.26
+aspmx.l.google.com.	83	IN	AAAA	2607:f8b0:4003:c06::1a
+
+;; Query time: 51 msec
+;; SERVER: 10.1.178.41#53(10.1.178.41)
+;; WHEN: Mon Aug 10 08:42:21 2015
+;; MSG SIZE  rcvd: 224
+
