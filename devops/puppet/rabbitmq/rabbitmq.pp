@@ -20,6 +20,19 @@ exec{"install-erlang-repo":
     unless => "rpm -q erlang-solutions-1.0-1.noarch"
 }
 
+package {"erlang-solutions":
+    ensure => "installed"
+}
+
+exec{"clean-yum-cache":
+    command => "yum clean all",
+    path => "/usr/bin"
+}
+
+package { "wget":
+    ensure => "installed"
+}
+
 package { "erlang":
     ensure => "installed"
 }
@@ -29,7 +42,7 @@ package { "rabbitmq-server":
     ensure => "installed"
 }
 
-# download config file
+# download config file for guest access
 exec{"download-rabbitmq-config":
     command => "curl -o /etc/rabbitmq/rabbitmq.config https://raw.githubusercontent.com/autotune/wiki/master/devops/puppet/rabbitmq/rabbitmq.config",
     unless => "ls -lhd /etc/rabbitmq/rabbitmq.config",
@@ -38,4 +51,10 @@ exec{"download-rabbitmq-config":
 
 service { "rabbitmq-server":
     ensure => "running"
+}
+
+# enable control panel
+exec{"enable-control-panel":,
+    command => "rabbitmq-plugins enable rabbitmq_management",
+    path => "/bin/:/usr/bin/:/usr/sbin/:/usr/lib/rabbitmq/bin/"
 }
