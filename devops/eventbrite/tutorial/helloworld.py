@@ -1,6 +1,6 @@
 #!/usr/bin/python2.7
 import requests
-
+# token from your apps personal oath setting 
 txt=open("token.txt")
 token=txt.read()
 event_id='19829420330/'
