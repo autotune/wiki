@@ -1,0 +1,22 @@
+- name: Create instances
+  vars_files: 
+    - contrasting_org_keys.yml 
+  hosts: localhost 
+  tasks: 
+    - name: create contrasting.org web instance
+      local_action:
+        module: ec2
+        zone: us-east-1a
+        region: us-east-1
+        image: ami-950a2cff
+        private_ip: 10.0.1.8
+        assign_public_ip: yes 
+        instance_type: t2.micro
+        state: present
+        vpc_subnet_id: subnet-fdb8a2d6
+        group_id: sg-a900f9d0
+        key_name: brian-battlestation-ubuntu
+        monitoring: yes
+        instance_tags: {"Name": "prod-internal-www03"}
+        # Make sure iam:PassRole is added in policy for user
+        instance_profile_name: CloudWatchRole 
