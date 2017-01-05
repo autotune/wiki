@@ -1,0 +1,5 @@
+syntax on
+"Indent with tabs and not spaces"
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+"Show line numbers"
+set number
